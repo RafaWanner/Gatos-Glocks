@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://cmun2y3te0w2"]
+[gd_scene load_steps=7 format=3 uid="uid://cmun2y3te0w2"]
 
 [ext_resource type="Script" path="res://survivors_game.gd" id="1_fpvdx"]
 [ext_resource type="PackedScene" uid="uid://77c5ugjn8pc3" path="res://player.tscn" id="1_v554i"]
@@ -7,9 +7,12 @@
 
 [sub_resource type="Curve2D" id="Curve2D_qrd0f"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, -96.3337, 1601.13, 0, 0, 0, 0, -79.3337, -259.868, 0, 0, 0, 0, 2228.67, -310.868, 0, 0, 0, 0, 2256.67, 1652.13, 0, 0, 0, 0, -85.3337, 1601.13)
+"points": PackedVector2Array(0, 0, 0, 0, -84.0134, 1705.2, 0, 0, 0, 0, -92.227, -331.724, 0, 0, 0, 0, 2354.6, -311.861, 0, 0, 0, 0, 2360.35, 1702.22, 0, 0, 0, 0, -88.1202, 1700.23)
 }
 point_count = 5
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_84l03"]
+size = Vector2(107, 3001)
 
 [node name="Game" type="Node2D"]
 y_sort_enabled = true
@@ -25,7 +28,7 @@ offset_right = 1942.0
 offset_bottom = 1120.0
 
 [node name="Player" parent="." instance=ExtResource("1_v554i")]
-position = Vector2(930, 228)
+position = Vector2(968, 571)
 
 [node name="PineTree" type="Sprite2D" parent="."]
 position = Vector2(-522, 1568)
@@ -44,16 +47,48 @@ position = Vector2(584, 751)
 position = Vector2(838, 238)
 
 [node name="Path2D" type="Path2D" parent="."]
-position = Vector2(-42.6663, -405.132)
+position = Vector2(-372.204, -61.6082)
+scale = Vector2(1.15796, 0.851286)
 curve = SubResource("Curve2D_qrd0f")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
 unique_name_in_owner = true
-position = Vector2(-96.3337, 1601.13)
-rotation = -1.56166
+position = Vector2(-84.0134, 1705.2)
+rotation = -1.57483
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 0.353
 autostart = true
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(966, 543)
+zoom = Vector2(0.75, 0.75)
+
+[node name="Barrier" type="Node2D" parent="."]
+
+[node name="Barrier1" type="StaticBody2D" parent="Barrier"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Barrier/Barrier1"]
+position = Vector2(-371, 509)
+shape = SubResource("RectangleShape2D_84l03")
+
+[node name="Barrier2" type="StaticBody2D" parent="Barrier"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Barrier/Barrier2"]
+position = Vector2(2302, 588)
+shape = SubResource("RectangleShape2D_84l03")
+
+[node name="Barrier3" type="StaticBody2D" parent="Barrier"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Barrier/Barrier3"]
+position = Vector2(935, -238)
+rotation = 1.5708
+shape = SubResource("RectangleShape2D_84l03")
+
+[node name="Barrier4" type="StaticBody2D" parent="Barrier"]
+rotation = 1.5708
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Barrier/Barrier4"]
+position = Vector2(1324, -977)
+shape = SubResource("RectangleShape2D_84l03")
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

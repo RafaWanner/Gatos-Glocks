@@ -34,8 +34,6 @@ position = Vector2(2, -1)
 position = Vector2(0, -39)
 shape = SubResource("CircleShape2D_t4pjx")
 
-[node name="Camera2D" type="Camera2D" parent="."]
-
 [node name="Gun" parent="." instance=ExtResource("3_mumcr")]
 position = Vector2(1, -39)
 
