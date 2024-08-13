@@ -3,3 +3,9 @@ res://mobs.tscn
 res://player.tscn
 res://pine_tree.tscn
 res://gun.tscn
+res://characters/happy_boo/happy_boo.tscn
+res://smoke_explosion/smoke_explosion.tscn
+res://mobs.gd
+res://xp.tscn
+res://player.gd
+res://xp.gd
