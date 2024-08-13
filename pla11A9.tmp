@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://77c5ugjn8pc3"]
+[gd_scene load_steps=8 format=3 uid="uid://77c5ugjn8pc3"]
 
 [ext_resource type="PackedScene" uid="uid://pbmyh1qru7p" path="res://characters/happy_boo/happy_boo.tscn" id="1_86opn"]
 [ext_resource type="Script" path="res://player.gd" id="1_nbe3u"]
@@ -9,6 +9,20 @@ radius = 61.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_oi7y0"]
 radius = 43.1045
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0ohfk"]
+bg_color = Color(0.136826, 0.136826, 0.136826, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2twq3"]
+bg_color = Color(0.0534974, 0.717528, 0.140411, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
 
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_nbe3u")
@@ -33,6 +47,21 @@ position = Vector2(2, -18)
 shape = SubResource("CircleShape2D_oi7y0")
 debug_color = Color(0.988044, 0, 0.306395, 0.42)
 
-[node name="InvulnerabilityTimer" type="Timer" parent="."]
+[node name="ProgressBar" type="ProgressBar" parent="."]
+unique_name_in_owner = true
+offset_left = -51.0
+offset_top = -124.0
+offset_right = 53.0
+offset_bottom = -106.0
+theme_override_styles/background = SubResource("StyleBoxFlat_0ohfk")
+theme_override_styles/fill = SubResource("StyleBoxFlat_2twq3")
+step = 0.0
+value = 100.0
+show_percentage = false
 
-[connection signal="timeout" from="InvulnerabilityTimer" to="." method="_on_invulnerability_timer_timeout"]
+[node name="HealthLabel" type="Label" parent="."]
+unique_name_in_owner = true
+offset_left = -57.0
+offset_top = -187.0
+offset_right = 54.0
+offset_bottom = -139.0

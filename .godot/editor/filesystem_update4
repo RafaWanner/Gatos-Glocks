@@ -1,13 +1,7 @@
 res://survivors_game.tscn
-res://mobs.gd
 res://player.tscn
-res://characters/happy_boo/happy_boo.tscn
-res://pine_tree.tscn
 res://mobs.tscn
-res://gun.tscn
-res://gun.gd
-res://bullet.tscn
-res://Bullet.gd
-res://characters/slime/slime.gd
+res://pine_tree.tscn
 res://player.gd
-res://survivors_game.gd
+res://gun.gd
+res://gun.tscn

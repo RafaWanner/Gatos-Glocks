@@ -1,0 +1,72 @@
+[gd_scene load_steps=8 format=3 uid="uid://77c5ugjn8pc3"]
+
+[ext_resource type="PackedScene" uid="uid://pbmyh1qru7p" path="res://characters/happy_boo/happy_boo.tscn" id="1_86opn"]
+[ext_resource type="Script" path="res://player.gd" id="1_nbe3u"]
+[ext_resource type="PackedScene" uid="uid://blbqr15u7k7rs" path="res://gun.tscn" id="3_mumcr"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_t4pjx"]
+radius = 61.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_oi7y0"]
+radius = 43.1045
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0ohfk"]
+bg_color = Color(0.136826, 0.136826, 0.136826, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2twq3"]
+bg_color = Color(0.0534974, 0.717528, 0.140411, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_nbe3u")
+
+[node name="HappyBoo" parent="." instance=ExtResource("1_86opn")]
+position = Vector2(2, -1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -39)
+shape = SubResource("CircleShape2D_t4pjx")
+
+[node name="Gun" parent="." instance=ExtResource("3_mumcr")]
+position = Vector2(1, -39)
+
+[node name="HurtBox" type="Area2D" parent="."]
+unique_name_in_owner = true
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox"]
+position = Vector2(2, -18)
+shape = SubResource("CircleShape2D_oi7y0")
+debug_color = Color(0.988044, 0, 0.306395, 0.42)
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+unique_name_in_owner = true
+offset_left = -51.0
+offset_top = -124.0
+offset_right = 53.0
+offset_bottom = -106.0
+theme_override_styles/background = SubResource("StyleBoxFlat_0ohfk")
+theme_override_styles/fill = SubResource("StyleBoxFlat_2twq3")
+step = 0.0
+value = 100.0
+show_percentage = false
+
+[node name="HealthLabel" type="Label" parent="."]
+unique_name_in_owner = true
+offset_left = -57.0
+offset_top = -187.0
+offset_right = 54.0
+offset_bottom = -139.0
+
+[node name="ShootingTimer" type="Timer" parent="."]
+unique_name_in_owner = true
+
+[connection signal="timeout" from="ShootingTimer" to="Gun" method="_on_shooting_timer_timeout"]
