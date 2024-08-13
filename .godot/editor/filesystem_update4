@@ -1,7 +1,6 @@
 res://survivors_game.tscn
 res://player.tscn
 res://mobs.tscn
+res://mobs.gd
 res://pine_tree.tscn
-res://player.gd
 res://gun.gd
-res://gun.tscn

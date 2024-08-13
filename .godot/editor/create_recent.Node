@@ -1,3 +1,6 @@
+Node2D
+StaticBody2D
+CollisionShape2D
 Timer
 Label
 Node
@@ -12,3 +15,5 @@ CollisionPolygon2D
 Marker2D
 CanvasLayer
 Camera2D
+CharacterBody2D
+ColorRect
