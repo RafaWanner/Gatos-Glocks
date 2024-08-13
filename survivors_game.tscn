@@ -4,11 +4,10 @@
 [ext_resource type="PackedScene" uid="uid://77c5ugjn8pc3" path="res://player.tscn" id="1_v554i"]
 [ext_resource type="Texture2D" uid="uid://caqfk2xng5v5u" path="res://trees/pine_tree.png" id="2_ryu47"]
 [ext_resource type="PackedScene" uid="uid://cljcinfnofsfl" path="res://pine_tree.tscn" id="3_pwtpi"]
-[ext_resource type="Script" path="res://HealthLabel.gd" id="5_58y8m"]
 
 [sub_resource type="Curve2D" id="Curve2D_qrd0f"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, -84.0134, 1705.2, 0, 0, 0, 0, -92.227, -331.724, 0, 0, 0, 0, 2354.6, -311.861, 0, 0, 0, 0, 2360.35, 1702.22, 0, 0, 0, 0, -88.1202, 1700.23)
+"points": PackedVector2Array(0, 0, 0, 0, -30.913, 1655.86, 0, 0, 0, 0, -50.7755, -258.893, 0, 0, 0, 0, 2252.41, -136.725, 0, 0, 0, 0, 2241.19, 1666.43, 0, 0, 0, 0, -46.4576, 1698.15)
 }
 point_count = 5
 
@@ -54,8 +53,8 @@ curve = SubResource("Curve2D_qrd0f")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
 unique_name_in_owner = true
-position = Vector2(-84.0134, 1705.2)
-rotation = -1.57483
+position = Vector2(-30.913, 1655.86)
+rotation = -1.58117
 
 [node name="Timer" type="Timer" parent="."]
 autostart = true
@@ -69,19 +68,19 @@ zoom = Vector2(0.75, 0.75)
 [node name="Barrier1" type="StaticBody2D" parent="Barrier"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Barrier/Barrier1"]
-position = Vector2(-371, 509)
+position = Vector2(-533, 518)
 shape = SubResource("RectangleShape2D_84l03")
 
 [node name="Barrier2" type="StaticBody2D" parent="Barrier"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Barrier/Barrier2"]
-position = Vector2(2302, 588)
+position = Vector2(2455, 584)
 shape = SubResource("RectangleShape2D_84l03")
 
 [node name="Barrier3" type="StaticBody2D" parent="Barrier"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Barrier/Barrier3"]
-position = Vector2(935, -238)
+position = Vector2(935, -391)
 rotation = 1.5708
 shape = SubResource("RectangleShape2D_84l03")
 
@@ -89,7 +88,14 @@ shape = SubResource("RectangleShape2D_84l03")
 rotation = 1.5708
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Barrier/Barrier4"]
-position = Vector2(1324, -977)
+position = Vector2(1495, -950.005)
 shape = SubResource("RectangleShape2D_84l03")
+
+[node name="HealthLabel" type="Label" parent="."]
+unique_name_in_owner = true
+offset_right = 577.0
+offset_bottom = 64.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 100
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
