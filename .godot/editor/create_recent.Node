@@ -1,6 +1,6 @@
-ColorRect
 Button
 VBoxContainer
+ColorRect
 MarginContainer
 RigidBody2D
 Area2D

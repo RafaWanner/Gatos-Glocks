@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 signal health_deplated
 
-var health = 5
+var health = 1
 var xp = 0
 var lvlup = 1
 var invincibility_duration = 1.0  # Tempo de invencibilidade em segundos
@@ -26,8 +26,11 @@ func _physics_process(delta):
 	if overlapping_mobs.size() > 0 and not is_invincible:
 		health -= DAMAGE_RATE
 		get_node("/root/Game/Labels/HealthLabel").text = str(health)
+		
 		if health <= 0:
 			health_deplated.emit()
+			get_node("/root/Game")._game_over_menu()
+		
 		_start_invincibility()
 
 func _start_invincibility():
@@ -41,4 +44,4 @@ func add_xp(amount):
 	
 	if xp == lvlup:
 		get_node("/root/Game")._lvlup_menu()
-		lvlup = xp + lvlup + 2 # aumenta o nivel necessario para o lvl up por + 5
+		lvlup = xp + lvlup + 2 # aumenta o nivel necessario para o lvl up por + 2
