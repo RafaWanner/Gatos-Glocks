@@ -4,6 +4,7 @@ signal health_deplated
 
 var health = 5
 var xp = 0
+var lvlup = 1
 var invincibility_duration = 1.0  # Tempo de invencibilidade em segundos
 var is_invincible = false
 
@@ -37,3 +38,7 @@ func _start_invincibility():
 func add_xp(amount):
 	xp += amount
 	get_node("/root/Game/Labels/XPLabel").text = str(xp)
+	
+	if xp == lvlup:
+		get_node("/root/Game")._lvlup_menu()
+		lvlup = xp + lvlup + 2 # aumenta o nivel necessario para o lvl up por + 5

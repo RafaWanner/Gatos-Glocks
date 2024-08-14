@@ -15,10 +15,8 @@ modulate = Color(0.529412, 1, 0.176471, 1)
 texture = ExtResource("1_rchm4")
 
 [node name="Area2D" type="Area2D" parent="."]
-scale = Vector2(1, 1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-scale = Vector2(1, 1)
 shape = SubResource("CircleShape2D_pq52e")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

@@ -1,9 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://cmun2y3te0w2"]
+[gd_scene load_steps=9 format=3 uid="uid://cmun2y3te0w2"]
 
 [ext_resource type="Script" path="res://survivors_game.gd" id="1_fpvdx"]
 [ext_resource type="PackedScene" uid="uid://77c5ugjn8pc3" path="res://player.tscn" id="1_v554i"]
 [ext_resource type="Texture2D" uid="uid://caqfk2xng5v5u" path="res://trees/pine_tree.png" id="2_ryu47"]
 [ext_resource type="PackedScene" uid="uid://cljcinfnofsfl" path="res://pine_tree.tscn" id="3_pwtpi"]
+[ext_resource type="PackedScene" uid="uid://ble3vu7nsby2i" path="res://pause_menu.tscn" id="5_wgenn"]
+[ext_resource type="PackedScene" uid="uid://cd4n8lsapjlp3" path="res://lvl_up_menu.tscn" id="6_7e75v"]
 
 [sub_resource type="Curve2D" id="Curve2D_qrd0f"]
 _data = {
@@ -29,10 +31,6 @@ offset_bottom = 1120.0
 
 [node name="Player" parent="." instance=ExtResource("1_v554i")]
 position = Vector2(968, 571)
-
-[node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(966, 543)
-zoom = Vector2(0.75, 0.75)
 
 [node name="Trees" type="Node2D" parent="."]
 
@@ -111,5 +109,26 @@ offset_right = 289.0
 offset_bottom = 107.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 100
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(966, 543)
+zoom = Vector2(0.75, 0.75)
+
+[node name="LVLUpMenu" parent="Camera2D" instance=ExtResource("6_7e75v")]
+visible = false
+z_index = 2
+offset_left = -970.0
+offset_top = -547.0
+offset_right = -970.0
+offset_bottom = -547.0
+
+[node name="PauseMenu" parent="Camera2D" instance=ExtResource("5_wgenn")]
+visible = false
+z_index = 3
+offset_left = -243.0
+offset_top = -240.0
+offset_right = -243.0
+offset_bottom = -240.0
+scale = Vector2(7, 7)
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
