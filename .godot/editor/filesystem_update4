@@ -12,3 +12,12 @@ res://characters/happy_boo/happy_boo.tscn
 res://xp.tscn
 res://pine_tree.tscn
 res://flower_pot.tscn
+res://lvl_up_menu.tscn
+res://game_over_menu.gd
+res://pause_menu.gd
+res://lvl_up_menu.gd
+res://gun.gd
+res://mobs.gd
+res://xp.gd
+res://Bullet.gd
+res://survivors_game.gd

@@ -13,16 +13,16 @@ func _physics_process(delta):
 	move_and_slide()
 	
 	
-func take_damage():
-	health -= 1
+func take_damage(amount):
+	health -= amount
 	%Slime.play_hurt()
 	
-	if health == 0:
+	if health <= 0:
 		const XP_DROP = preload("res://xp.tscn")
 		var xp = XP_DROP.instantiate()
 		get_parent().add_child(xp)
 		xp.global_position = global_position
-		queue_free()	
+		queue_free()
 		
 	const SMOKE_EXPLOSION = preload("res://smoke_explosion/smoke_explosion.tscn")
 	var smoke = SMOKE_EXPLOSION.instantiate()

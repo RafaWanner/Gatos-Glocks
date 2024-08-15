@@ -7,6 +7,7 @@ var paused = false
 var shooting = false  # Variável para controlar o estado de disparo
 var can_shoot = true
 var fire_rate = 0.5
+var damage = 1
 
 func is_paused():
 	paused = !paused
@@ -25,6 +26,7 @@ func _physics_process(delta):
 func shoot():
 	const BULLET = preload("res://bullet.tscn")
 	var new_bullet = BULLET.instantiate()
+	new_bullet.damage = damage
 	var shooting_point = $ShootingPoint  # ou get_node("ShootingPoint") se preferir
 	
 	new_bullet.global_position = %ShootingPoint.global_position

@@ -1,10 +1,12 @@
 extends CharacterBody2D
 
 signal health_deplated
+signal lvlup_screen_is_down
 
 var health = 3
 var xp = 0
 var lvlup = 1
+var xp_amount = 1
 var invincibility_duration = 1.0  # Tempo de invencibilidade em segundos
 var is_invincible = false
 
@@ -45,10 +47,12 @@ func _start_invincibility():
 	await(get_tree().create_timer(invincibility_duration).timeout)
 	is_invincible = false
 
-func add_xp(amount):
-	xp += amount
+func add_xp():
+	xp += xp_amount
 	get_node("/root/Game/Labels/XPLabel").text = str(xp)
 	
-	if xp == lvlup:
+	while xp >= lvlup:
 		get_node("/root/Game")._lvlup_menu()
-		lvlup = xp + lvlup + 2 # aumenta o nivel necessario para o lvl up por + 2
+		await lvlup_screen_is_down
+		xp -= lvlup
+		lvlup += + 2 # aumenta o nivel necessario para o lvl up por + 2

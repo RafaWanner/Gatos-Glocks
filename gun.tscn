@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://blbqr15u7k7rs"]
 
 [ext_resource type="Script" path="res://gun.gd" id="1_e4k7e"]
-[ext_resource type="Texture2D" uid="uid://dnjjvsr78o1hl" path="res://Assets/Gatos&GlocksSprites/Glocks-Sheet.png" id="2_5jxf7"]
+[ext_resource type="Texture2D" uid="uid://bvr3x3is8mear" path="res://Assets/Gatos&GlocksSprites/Glocks.png" id="2_wqdwd"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_hp273"]
 radius = 364.351
@@ -18,14 +18,14 @@ shape = SubResource("CircleShape2D_hp273")
 [node name="weaponPivot" type="Marker2D" parent="."]
 
 [node name="Pistol" type="Sprite2D" parent="weaponPivot"]
-position = Vector2(88.784, -7.77255)
+position = Vector2(97, 2)
 rotation = 0.00599366
 scale = Vector2(2.45314, 2.51575)
-texture = ExtResource("2_5jxf7")
+texture = ExtResource("2_wqdwd")
 
 [node name="ShootingPoint" type="Marker2D" parent="weaponPivot/Pistol"]
 unique_name_in_owner = true
-position = Vector2(24.5455, -0.233869)
+position = Vector2(24.526, -3.41378)
 
 [node name="FireRateTimer" type="Timer" parent="."]
 unique_name_in_owner = true

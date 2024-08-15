@@ -98,7 +98,6 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 100
 
 [node name="XPLabel" type="Label" parent="Labels"]
-visible = false
 offset_left = -288.0
 offset_top = -30.0
 offset_right = 289.0
@@ -112,7 +111,7 @@ zoom = Vector2(0.75, 0.75)
 
 [node name="LVLUpMenu" parent="Camera2D" instance=ExtResource("6_7e75v")]
 visible = false
-z_index = 2
+z_index = 12
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -121,7 +120,7 @@ anchor_bottom = 0.5
 
 [node name="PauseMenu" parent="Camera2D" instance=ExtResource("5_wgenn")]
 visible = false
-z_index = 3
+z_index = 13
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -130,7 +129,7 @@ anchor_bottom = 0.5
 
 [node name="GameOverMenu" parent="Camera2D" instance=ExtResource("7_i48sn")]
 visible = false
-z_index = 5
+z_index = 15
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -140,6 +139,7 @@ size_flags_horizontal = 4
 
 [node name="HeartBar" parent="Camera2D" instance=ExtResource("8_a1kei")]
 visible = false
+z_index = 11
 offset_left = -1287.0
 offset_top = -714.0
 offset_right = -411.0

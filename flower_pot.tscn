@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://cljcinfnofsfl"]
 
 [ext_resource type="Texture2D" uid="uid://b7rhtttevhxtj" path="res://characters/ground_shadow.png" id="1_q23vr"]
-[ext_resource type="Texture2D" path="res://Assets/Gatos&GlocksSprites/Sprite-0001.png" id="2_pybu1"]
+[ext_resource type="Texture2D" uid="uid://dqhkujao3cee0" path="res://Assets/Gatos&GlocksSprites/Flor.png" id="2_44qau"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_pq52e"]
 radius = 32.0
@@ -10,14 +10,16 @@ radius = 32.0
 
 [node name="GroundShadow" type="Sprite2D" parent="."]
 modulate = Color(0.241156, 0.241156, 0.241156, 1)
+z_index = -1
 position = Vector2(-1, 5)
 scale = Vector2(0.607143, 0.711538)
 texture = ExtResource("1_q23vr")
 
 [node name="Flower" type="Sprite2D" parent="."]
+z_index = 1
 position = Vector2(0.999997, -53.5)
 scale = Vector2(4.25, 4.53125)
-texture = ExtResource("2_pybu1")
+texture = ExtResource("2_44qau")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -11)

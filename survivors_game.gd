@@ -27,6 +27,7 @@ func _pause_menu():
 
 func _lvlup_menu():
 	is_lvlup_menu = true
+	lvlup_menu._random_upgrades()
 	lvlup_menu.show()
 	Engine.time_scale = 0
 
