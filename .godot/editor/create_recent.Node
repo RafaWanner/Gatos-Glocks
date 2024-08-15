@@ -1,8 +1,9 @@
+TextureRect
+HBoxContainer
 CenterContainer
 VBoxContainer
 Button
 Label
-HBoxContainer
 Panel
 CanvasLayer
 ColorRect
@@ -11,5 +12,3 @@ RigidBody2D
 Area2D
 Node2D
 StaticBody2D
-Sprite2D
-CollisionShape2D

@@ -2,11 +2,17 @@ extends CharacterBody2D
 
 signal health_deplated
 
-var health = 1
+var health = 3
 var xp = 0
 var lvlup = 1
 var invincibility_duration = 1.0  # Tempo de invencibilidade em segundos
 var is_invincible = false
+
+@onready var heart_bar = get_node("/root/Game/Camera2D/HeartBar")
+
+func _ready():
+	heart_bar.show()
+	heart_bar.update_health(health)
 
 func _physics_process(delta):
 	var direction = Input.get_vector("move_left", "move_right", "move_up", "move_down")
@@ -26,6 +32,7 @@ func _physics_process(delta):
 	if overlapping_mobs.size() > 0 and not is_invincible:
 		health -= DAMAGE_RATE
 		get_node("/root/Game/Labels/HealthLabel").text = str(health)
+		heart_bar.update_health(health)
 		
 		if health <= 0:
 			health_deplated.emit()

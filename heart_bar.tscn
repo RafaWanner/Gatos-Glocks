@@ -1,0 +1,108 @@
+[gd_scene load_steps=3 format=3 uid="uid://cn65umf10v4gx"]
+
+[ext_resource type="Texture2D" uid="uid://ccmojd1cjlncb" path="res://Assets/Gatos&GlocksSprites/Vida.png" id="1_at1l1"]
+[ext_resource type="Script" path="res://heart_bar.gd" id="1_mh7bg"]
+
+[node name="HeartBar" type="HBoxContainer"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -218.0
+offset_top = -20.0
+offset_right = 218.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_mh7bg")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 2
+texture = ExtResource("1_at1l1")
+expand_mode = 2
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+layout_mode = 2
+texture = ExtResource("1_at1l1")
+expand_mode = 2
+
+[node name="TextureRect3" type="TextureRect" parent="."]
+layout_mode = 2
+texture = ExtResource("1_at1l1")
+expand_mode = 2
+
+[node name="TextureRect4" type="TextureRect" parent="."]
+layout_mode = 2
+texture = ExtResource("1_at1l1")
+expand_mode = 2
+
+[node name="TextureRect5" type="TextureRect" parent="."]
+layout_mode = 2
+texture = ExtResource("1_at1l1")
+expand_mode = 2
+
+[node name="TextureRect6" type="TextureRect" parent="."]
+layout_mode = 2
+texture = ExtResource("1_at1l1")
+expand_mode = 2
+
+[node name="TextureRect7" type="TextureRect" parent="."]
+layout_mode = 2
+texture = ExtResource("1_at1l1")
+expand_mode = 2
+
+[node name="TextureRect8" type="TextureRect" parent="."]
+layout_mode = 2
+texture = ExtResource("1_at1l1")
+expand_mode = 2
+
+[node name="TextureRect9" type="TextureRect" parent="."]
+layout_mode = 2
+texture = ExtResource("1_at1l1")
+expand_mode = 2
+
+[node name="TextureRect10" type="TextureRect" parent="."]
+layout_mode = 2
+texture = ExtResource("1_at1l1")
+expand_mode = 2
+
+[node name="TextureRect11" type="TextureRect" parent="."]
+layout_mode = 2
+texture = ExtResource("1_at1l1")
+expand_mode = 2
+
+[node name="TextureRect12" type="TextureRect" parent="."]
+layout_mode = 2
+texture = ExtResource("1_at1l1")
+expand_mode = 2
+
+[node name="TextureRect13" type="TextureRect" parent="."]
+layout_mode = 2
+texture = ExtResource("1_at1l1")
+expand_mode = 2
+
+[node name="TextureRect14" type="TextureRect" parent="."]
+layout_mode = 2
+texture = ExtResource("1_at1l1")
+expand_mode = 2
+
+[node name="TextureRect15" type="TextureRect" parent="."]
+layout_mode = 2
+texture = ExtResource("1_at1l1")
+expand_mode = 2
+
+[node name="TextureRect16" type="TextureRect" parent="."]
+layout_mode = 2
+texture = ExtResource("1_at1l1")
+expand_mode = 2
+
+[node name="TextureRect17" type="TextureRect" parent="."]
+layout_mode = 2
+texture = ExtResource("1_at1l1")
+expand_mode = 2
+
+[node name="TextureRect18" type="TextureRect" parent="."]
+layout_mode = 2
+texture = ExtResource("1_at1l1")
+expand_mode = 2

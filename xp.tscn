@@ -10,7 +10,7 @@ radius = 36.0555
 scale = Vector2(0.35, 0.35)
 script = ExtResource("1_j1dj5")
 
-[node name="PineTree" type="Sprite2D" parent="."]
+[node name="XP" type="Sprite2D" parent="."]
 modulate = Color(0.529412, 1, 0.176471, 1)
 texture = ExtResource("1_rchm4")
 

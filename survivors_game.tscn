@@ -2,11 +2,11 @@
 
 [ext_resource type="Script" path="res://survivors_game.gd" id="1_fpvdx"]
 [ext_resource type="PackedScene" uid="uid://77c5ugjn8pc3" path="res://player.tscn" id="1_v554i"]
-[ext_resource type="Texture2D" uid="uid://caqfk2xng5v5u" path="res://trees/pine_tree.png" id="2_ryu47"]
-[ext_resource type="PackedScene" uid="uid://cljcinfnofsfl" path="res://pine_tree.tscn" id="3_pwtpi"]
+[ext_resource type="PackedScene" uid="uid://cljcinfnofsfl" path="res://flower_pot.tscn" id="3_pwtpi"]
 [ext_resource type="PackedScene" uid="uid://ble3vu7nsby2i" path="res://pause_menu.tscn" id="5_wgenn"]
 [ext_resource type="PackedScene" uid="uid://cd4n8lsapjlp3" path="res://lvl_up_menu.tscn" id="6_7e75v"]
 [ext_resource type="PackedScene" uid="uid://u7xreu7vsssh" path="res://game_over_menu.tscn" id="7_i48sn"]
+[ext_resource type="PackedScene" uid="uid://cn65umf10v4gx" path="res://heart_bar.tscn" id="8_a1kei"]
 
 [sub_resource type="Curve2D" id="Curve2D_qrd0f"]
 _data = {
@@ -33,22 +33,15 @@ offset_bottom = 1120.0
 [node name="Player" parent="." instance=ExtResource("1_v554i")]
 position = Vector2(968, 571)
 
-[node name="Trees" type="Node2D" parent="."]
+[node name="Flowers" type="Node2D" parent="."]
 
-[node name="PineTree" type="Sprite2D" parent="Trees"]
-position = Vector2(-522, 1568)
-texture = ExtResource("2_ryu47")
-
-[node name="Tree" parent="Trees" instance=ExtResource("3_pwtpi")]
-position = Vector2(130, 156)
-
-[node name="Tree2" parent="Trees" instance=ExtResource("3_pwtpi")]
+[node name="FlowerPot1" parent="Flowers" instance=ExtResource("3_pwtpi")]
 position = Vector2(285, 826)
 
-[node name="Tree3" parent="Trees" instance=ExtResource("3_pwtpi")]
+[node name="FlowerPot2" parent="Flowers" instance=ExtResource("3_pwtpi")]
 position = Vector2(584, 751)
 
-[node name="Tree4" parent="Trees" instance=ExtResource("3_pwtpi")]
+[node name="FlowerPot3" parent="Flowers" instance=ExtResource("3_pwtpi")]
 position = Vector2(838, 238)
 
 [node name="Path2D" type="Path2D" parent="."]
@@ -96,6 +89,7 @@ shape = SubResource("RectangleShape2D_84l03")
 
 [node name="HealthLabel" type="Label" parent="Labels"]
 unique_name_in_owner = true
+visible = false
 offset_left = -287.0
 offset_top = -178.0
 offset_right = 290.0
@@ -104,6 +98,7 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 100
 
 [node name="XPLabel" type="Label" parent="Labels"]
+visible = false
 offset_left = -288.0
 offset_top = -30.0
 offset_right = 289.0
@@ -142,5 +137,13 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 size_flags_horizontal = 4
+
+[node name="HeartBar" parent="Camera2D" instance=ExtResource("8_a1kei")]
+visible = false
+offset_left = -1287.0
+offset_top = -714.0
+offset_right = -411.0
+offset_bottom = -674.0
+scale = Vector2(3.26839, 3.26839)
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
