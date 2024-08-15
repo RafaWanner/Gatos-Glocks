@@ -19,57 +19,65 @@ script = ExtResource("1_1nvw2")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 material = SubResource("ShaderMaterial_7bifv")
-layout_mode = 0
-offset_left = -1204.0
-offset_top = -695.0
-offset_right = 2388.0
-offset_bottom = 1259.0
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="ColorRect2" type="ColorRect" parent="."]
-layout_mode = 0
-offset_left = 451.0
-offset_top = 332.0
-offset_right = 1460.0
-offset_bottom = 682.0
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -504.5
+offset_top = -175.0
+offset_right = 504.5
+offset_bottom = 175.0
+grow_horizontal = 2
+grow_vertical = 2
 color = Color(1, 1, 0.682353, 0.882353)
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
-layout_mode = 0
-offset_left = 570.0
-offset_top = 317.0
-offset_right = 1343.0
-offset_bottom = 708.0
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -386.5
+offset_top = -195.5
+offset_right = 386.5
+offset_bottom = 195.5
+grow_horizontal = 2
+grow_vertical = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
 layout_mode = 2
-size_flags_horizontal = 4
 size_flags_vertical = 4
+theme_override_constants/separation = 0
 
-[node name="Upgrade1" type="Button" parent="MarginContainer/VBoxContainer"]
-layout_mode = 2
-icon = ExtResource("3_huqvi")
-
-[node name="VBoxContainer2" type="VBoxContainer" parent="MarginContainer"]
-layout_mode = 2
-size_flags_horizontal = 0
-size_flags_vertical = 4
-
-[node name="Upgrade2" type="Button" parent="MarginContainer/VBoxContainer2"]
-layout_mode = 2
-icon = ExtResource("3_huqvi")
-
-[node name="VBoxContainer3" type="VBoxContainer" parent="MarginContainer"]
+[node name="Upgrade1" type="Button" parent="MarginContainer/HBoxContainer"]
+layout_direction = 2
 layout_mode = 2
 size_flags_horizontal = 8
-size_flags_vertical = 4
+icon = ExtResource("3_huqvi")
 
-[node name="Upgrade3" type="Button" parent="MarginContainer/VBoxContainer3"]
+[node name="Upgrade2" type="Button" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 6
+icon = ExtResource("3_huqvi")
+
+[node name="Upgrade3" type="Button" parent="MarginContainer/HBoxContainer"]
 layout_mode = 2
 icon = ExtResource("3_huqvi")
 
-[connection signal="pressed" from="MarginContainer/VBoxContainer/Upgrade1" to="." method="_on_resume_pressed"]
-[connection signal="pressed" from="MarginContainer/VBoxContainer/Upgrade1" to="." method="_on_upgrade_1_pressed"]
-[connection signal="pressed" from="MarginContainer/VBoxContainer2/Upgrade2" to="." method="_on_resume_pressed"]
-[connection signal="pressed" from="MarginContainer/VBoxContainer2/Upgrade2" to="." method="_on_upgrade_2_pressed"]
-[connection signal="pressed" from="MarginContainer/VBoxContainer3/Upgrade3" to="." method="_on_resume_pressed"]
-[connection signal="pressed" from="MarginContainer/VBoxContainer3/Upgrade3" to="." method="_on_upgrade_3_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/Upgrade1" to="." method="_on_upgrade_1_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/Upgrade1" to="." method="_on_resume_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/Upgrade2" to="." method="_on_upgrade_2_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/Upgrade2" to="." method="_on_resume_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/Upgrade3" to="." method="_on_upgrade_3_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/Upgrade3" to="." method="_on_resume_pressed"]
