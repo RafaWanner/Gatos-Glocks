@@ -7,6 +7,7 @@ var health = 3
 var xp = 0
 var lvlup = 1
 var xp_amount = 1
+var speed = 600
 var invincibility_duration = 1.0  # Tempo de invencibilidade em segundos
 var is_invincible = false
 
@@ -21,7 +22,7 @@ func _physics_process(delta):
 	
 	get_node("/root/Game/Labels/HealthLabel").text = str(health)
 	get_node("/root/Game/Labels/XPLabel").text = str(xp)
-	velocity = direction * 600
+	velocity = direction * speed
 	move_and_slide()
 	
 	if velocity.length() > 0.0:
@@ -54,5 +55,6 @@ func add_xp():
 	while xp >= lvlup:
 		get_node("/root/Game")._lvlup_menu()
 		await lvlup_screen_is_down
+		get_node("/root/Game/Player/Gun").is_paused()
 		xp -= lvlup
 		lvlup += + 2 # aumenta o nivel necessario para o lvl up por + 2

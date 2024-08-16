@@ -30,6 +30,7 @@ func _lvlup_menu():
 	lvlup_menu._random_upgrades()
 	lvlup_menu.show()
 	Engine.time_scale = 0
+	get_node("/root/Game/Player/Gun").is_paused()
 
 func _game_over_menu():
 	game_over_menu.show()

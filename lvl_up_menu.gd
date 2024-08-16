@@ -9,7 +9,7 @@ extends Control
 @onready var upgrade2 = $MarginContainer/HBoxContainer/Upgrade2
 @onready var upgrade3 = $MarginContainer/HBoxContainer/Upgrade3
 
-var upgrades = ["hearts", "fire_rate", "bullet_damage","xp_increasse"]
+var upgrades = ["player_hearts", "fire_rate", "bullet_damage", "xp_increasse", "player_speed"]
 
 var rand_upgrade1 = upgrades[randi() % upgrades.size()]
 var rand_upgrade2 = upgrades[randi() % upgrades.size()]
@@ -22,7 +22,7 @@ func _random_upgrades():
 	rand_upgrade1 = upgrades[randi() % upgrades.size()]
 	
 	match rand_upgrade1:
-		"hearts":
+		"player_hearts":
 			upgrade1.icon = ResourceLoader.load("res://Assets/Gatos&GlocksSprites/Vida.png")
 		"fire_rate":
 			upgrade1.icon = ResourceLoader.load("res://Assets/Gatos&GlocksSprites/Balet¦o.png")
@@ -30,6 +30,8 @@ func _random_upgrades():
 			upgrade1.icon = ResourceLoader.load("res://Assets/Gatos&GlocksSprites/Glocks.png")
 		"xp_increasse":
 			upgrade1.icon = ResourceLoader.load("res://Assets/Gatos&GlocksSprites/XP.png")
+		"player_speed":
+			upgrade1.icon = ResourceLoader.load("res://Assets/Gatos&GlocksSprites/Bota.png")
 	
 	rand_upgrade2 = upgrades[randi() % upgrades.size()]
 	
@@ -37,7 +39,7 @@ func _random_upgrades():
 		rand_upgrade2 = upgrades[randi() % upgrades.size()]
 	
 	match rand_upgrade2:
-		"hearts":
+		"player_hearts":
 			upgrade2.icon = ResourceLoader.load("res://Assets/Gatos&GlocksSprites/Vida.png")
 		"fire_rate":
 			upgrade2.icon = ResourceLoader.load("res://Assets/Gatos&GlocksSprites/Balet¦o.png")
@@ -45,6 +47,8 @@ func _random_upgrades():
 			upgrade2.icon = ResourceLoader.load("res://Assets/Gatos&GlocksSprites/Glocks.png")
 		"xp_increasse":
 			upgrade2.icon = ResourceLoader.load("res://Assets/Gatos&GlocksSprites/XP.png")
+		"player_speed":
+			upgrade2.icon = ResourceLoader.load("res://Assets/Gatos&GlocksSprites/Bota.png")
 	
 	rand_upgrade3 = upgrades[randi() % upgrades.size()]
 	
@@ -52,7 +56,7 @@ func _random_upgrades():
 		rand_upgrade3 = upgrades[randi() % upgrades.size()]
 	
 	match rand_upgrade3:
-		"hearts":
+		"player_hearts":
 			upgrade3.icon = ResourceLoader.load("res://Assets/Gatos&GlocksSprites/Vida.png")
 		"fire_rate":
 			upgrade3.icon = ResourceLoader.load("res://Assets/Gatos&GlocksSprites/Balet¦o.png")
@@ -60,8 +64,10 @@ func _random_upgrades():
 			upgrade3.icon = ResourceLoader.load("res://Assets/Gatos&GlocksSprites/Glocks.png")
 		"xp_increasse":
 			upgrade3.icon = ResourceLoader.load("res://Assets/Gatos&GlocksSprites/XP.png")
+		"player_speed":
+			upgrade3.icon = ResourceLoader.load("res://Assets/Gatos&GlocksSprites/Bota.png")
 
-func upgrade_hearts():
+func upgrade_player_hearts():
 	player.health += 1
 	heart_bar.update_health(player.health)
 
@@ -74,17 +80,22 @@ func upgrade_bullet_damage():
 func upgrade_xp_increase():
 	player.xp_amount += 1
 
+func upgrade_player_speed():
+	player.speed += 100
+
 func _on_upgrade_1_pressed():
 	#dar o upgrade
 	match rand_upgrade1:
-		"hearts":
-			upgrade_hearts()
+		"player_hearts":
+			upgrade_player_hearts()
 		"fire_rate":
 			upgrade_fire_rate()
 		"bullet_damage":
 			upgrade_bullet_damage()
 		"xp_increasse":
 			upgrade_xp_increase()
+		"player_speed":
+			upgrade_player_speed()
 	#dar o upgrade
 	main.is_lvlup_menu = false
 	Engine.time_scale = 1
@@ -94,14 +105,16 @@ func _on_upgrade_1_pressed():
 func _on_upgrade_2_pressed():
 	#dar o upgrade
 	match rand_upgrade2:
-		"hearts":
-			upgrade_hearts()
+		"player_hearts":
+			upgrade_player_hearts()
 		"fire_rate":
 			upgrade_fire_rate()
 		"bullet_damage":
 			upgrade_bullet_damage()
 		"xp_increasse":
 			upgrade_xp_increase()
+		"player_speed":
+			upgrade_player_speed()
 	#dar o upgrade
 	main.is_lvlup_menu = false
 	Engine.time_scale = 1
@@ -111,14 +124,16 @@ func _on_upgrade_2_pressed():
 func _on_upgrade_3_pressed():
 	#dar o upgrade
 	match rand_upgrade3:
-		"hearts":
-			upgrade_hearts()
+		"player_hearts":
+			upgrade_player_hearts()
 		"fire_rate":
 			upgrade_fire_rate()
 		"bullet_damage":
 			upgrade_bullet_damage()
 		"xp_increasse":
 			upgrade_xp_increase()
+		"player_speed":
+			upgrade_player_speed()
 	#dar o upgrade
 	main.is_lvlup_menu = false
 	Engine.time_scale = 1

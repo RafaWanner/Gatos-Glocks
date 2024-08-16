@@ -1,14 +1,10 @@
-res://mobs.tscn
-res://pause_menu.gdshader
-res://Inimigo.gd
 res://survivors_game.tscn
+res://pause_menu.gdshader
 res://lvl_up_menu.tscn
 res://gun.tscn
 res://player.tscn
 res://bullet.tscn
 res://flower_pot.tscn
-res://mobs.gd
+res://survivors_game.gd
 res://player.gd
-res://Gato.gd
-res://GatoMassa.gd
-res://Gatoparado.gd
+res://lvl_up_menu.gd

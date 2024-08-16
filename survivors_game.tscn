@@ -98,6 +98,7 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 100
 
 [node name="XPLabel" type="Label" parent="Labels"]
+visible = false
 offset_left = -288.0
 offset_top = -30.0
 offset_right = 289.0
