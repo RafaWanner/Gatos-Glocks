@@ -25,9 +25,7 @@ func _physics_process(delta):
 	move_and_slide()
 	
 	if velocity.length() > 0.0:
-		get_node("HappyBoo").play_walk_animation()
-	else:
-		get_node("HappyBoo").play_idle_animation()
+		get_node("Gato").play_andar_animacao()
 
 	const DAMAGE_RATE = 1
 	var overlapping_mobs = get_node("HurtBox").get_overlapping_bodies()

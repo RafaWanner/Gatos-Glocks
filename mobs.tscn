@@ -1,19 +1,51 @@
-[gd_scene load_steps=4 format=3 uid="uid://dftt4jl7mkbew"]
+[gd_scene load_steps=7 format=3 uid="uid://dftt4jl7mkbew"]
 
-[ext_resource type="PackedScene" uid="uid://ogik4s70pgwl" path="res://characters/slime/slime.tscn" id="1_g52b6"]
 [ext_resource type="Script" path="res://mobs.gd" id="1_mmfub"]
+[ext_resource type="Texture2D" uid="uid://1r28kw5hcuk1" path="res://Assets/Gatos&GlocksSprites/Inimigo1.png" id="2_o6ot3"]
+[ext_resource type="Script" path="res://Inimigo.gd" id="3_el30h"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_2vb01"]
 radius = 50.04
+
+[sub_resource type="Animation" id="Animation_5anvf"]
+resource_name = "inimigo_anda"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [0, 1]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_rj765"]
+_data = {
+"inimigo_anda": SubResource("Animation_5anvf")
+}
 
 [node name="Mob" type="CharacterBody2D"]
 collision_layer = 2
 collision_mask = 3
 script = ExtResource("1_mmfub")
 
-[node name="Slime" parent="." instance=ExtResource("1_g52b6")]
-unique_name_in_owner = true
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-1, -25)
 shape = SubResource("CircleShape2D_2vb01")
+
+[node name="Inimigo" type="Sprite2D" parent="."]
+position = Vector2(2, -37)
+scale = Vector2(3.71875, 3.71875)
+texture = ExtResource("2_o6ot3")
+hframes = 2
+frame = 1
+script = ExtResource("3_el30h")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Inimigo"]
+libraries = {
+"": SubResource("AnimationLibrary_rj765")
+}
