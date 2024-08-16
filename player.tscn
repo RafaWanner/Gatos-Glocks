@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://77c5ugjn8pc3"]
+[gd_scene load_steps=11 format=3 uid="uid://77c5ugjn8pc3"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_nbe3u"]
 [ext_resource type="Texture2D" uid="uid://cwks7kg6gwgrm" path="res://Assets/Gatos&GlocksSprites/Gatos.png" id="3_7d6x2"]
@@ -24,7 +24,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.4),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": [0, 1]
+"values": [0, 2]
 }
 
 [sub_resource type="Animation" id="Animation_wfky2"]
@@ -42,9 +42,26 @@ tracks/0/keys = {
 "values": []
 }
 
+[sub_resource type="Animation" id="Animation_fs3bw"]
+resource_name = "gato_para"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_mv161"]
 _data = {
 "gato_anda": SubResource("Animation_4ibwl"),
+"gato_para": SubResource("Animation_fs3bw"),
 "parado": SubResource("Animation_wfky2")
 }
 
@@ -74,7 +91,8 @@ debug_color = Color(0.988044, 0, 0.306395, 0.42)
 position = Vector2(-10, -41)
 scale = Vector2(3.375, 3.375)
 texture = ExtResource("3_7d6x2")
-hframes = 2
+hframes = 3
+frame = 1
 script = ExtResource("4_wqa8w")
 
 [node name="AnimcaoPlayer" type="AnimationPlayer" parent="Gato"]
