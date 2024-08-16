@@ -1,15 +1,18 @@
-[gd_scene load_steps=7 format=3 uid="uid://cmun2y3te0w2"]
+[gd_scene load_steps=10 format=3 uid="uid://cmun2y3te0w2"]
 
 [ext_resource type="Script" path="res://survivors_game.gd" id="1_fpvdx"]
 [ext_resource type="PackedScene" uid="uid://77c5ugjn8pc3" path="res://player.tscn" id="1_v554i"]
-[ext_resource type="Texture2D" uid="uid://caqfk2xng5v5u" path="res://trees/pine_tree.png" id="2_ryu47"]
-[ext_resource type="PackedScene" uid="uid://cljcinfnofsfl" path="res://pine_tree.tscn" id="3_pwtpi"]
+[ext_resource type="PackedScene" uid="uid://cljcinfnofsfl" path="res://flower_pot.tscn" id="3_pwtpi"]
+[ext_resource type="PackedScene" uid="uid://ble3vu7nsby2i" path="res://pause_menu.tscn" id="5_wgenn"]
+[ext_resource type="PackedScene" uid="uid://cd4n8lsapjlp3" path="res://lvl_up_menu.tscn" id="6_7e75v"]
+[ext_resource type="PackedScene" uid="uid://u7xreu7vsssh" path="res://game_over_menu.tscn" id="7_i48sn"]
+[ext_resource type="PackedScene" uid="uid://cn65umf10v4gx" path="res://heart_bar.tscn" id="8_a1kei"]
 
 [sub_resource type="Curve2D" id="Curve2D_qrd0f"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, -30.913, 1655.86, 0, 0, 0, 0, -50.7755, -258.893, 0, 0, 0, 0, 2252.41, -136.725, 0, 0, 0, 0, 2241.19, 1666.43, 0, 0, 0, 0, -46.4576, 1698.15)
+"points": PackedVector2Array(0, 0, 0, 0, -77.0916, 1685.04, 0, 0, 0, 0, -62.909, -211.099, 0, 0, 0, 0, 1136.66, -203.682, 0, 0, 0, 0, 2328.61, -202.98, 0, 0, 0, 0, 2333.39, 1693.91, 0, 0, 0, 0, -75.2866, 1686.37)
 }
-point_count = 5
+point_count = 6
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_84l03"]
 size = Vector2(107, 3001)
@@ -30,72 +33,117 @@ offset_bottom = 1120.0
 [node name="Player" parent="." instance=ExtResource("1_v554i")]
 position = Vector2(968, 571)
 
-[node name="PineTree" type="Sprite2D" parent="."]
-position = Vector2(-522, 1568)
-texture = ExtResource("2_ryu47")
+[node name="Flowers" type="Node2D" parent="."]
 
-[node name="Tree" parent="." instance=ExtResource("3_pwtpi")]
-position = Vector2(130, 156)
-
-[node name="Tree2" parent="." instance=ExtResource("3_pwtpi")]
+[node name="FlowerPot1" parent="Flowers" instance=ExtResource("3_pwtpi")]
 position = Vector2(285, 826)
 
-[node name="Tree3" parent="." instance=ExtResource("3_pwtpi")]
+[node name="FlowerPot2" parent="Flowers" instance=ExtResource("3_pwtpi")]
 position = Vector2(584, 751)
 
-[node name="Tree4" parent="." instance=ExtResource("3_pwtpi")]
+[node name="FlowerPot3" parent="Flowers" instance=ExtResource("3_pwtpi")]
 position = Vector2(838, 238)
 
 [node name="Path2D" type="Path2D" parent="."]
-position = Vector2(-372.204, -61.6082)
-scale = Vector2(1.15796, 0.851286)
+position = Vector2(-272.216, -36.4481)
+scale = Vector2(1.09978, 0.788973)
 curve = SubResource("Curve2D_qrd0f")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
 unique_name_in_owner = true
-position = Vector2(-30.913, 1655.86)
-rotation = -1.58117
+position = Vector2(-77.0916, 1685.04)
+rotation = -1.56332
 
 [node name="Timer" type="Timer" parent="."]
 autostart = true
+
+[node name="Barriers" type="Node2D" parent="."]
+
+[node name="Barrier1" type="StaticBody2D" parent="Barriers"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Barriers/Barrier1"]
+position = Vector2(-374, 515)
+shape = SubResource("RectangleShape2D_84l03")
+
+[node name="Barrier2" type="StaticBody2D" parent="Barriers"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Barriers/Barrier2"]
+position = Vector2(2312, 541)
+shape = SubResource("RectangleShape2D_84l03")
+
+[node name="Barrier3" type="StaticBody2D" parent="Barriers"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Barriers/Barrier3"]
+position = Vector2(942, -234)
+rotation = 1.5708
+shape = SubResource("RectangleShape2D_84l03")
+
+[node name="Barrier4" type="StaticBody2D" parent="Barriers"]
+rotation = 1.5708
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Barriers/Barrier4"]
+position = Vector2(1324, -950.005)
+shape = SubResource("RectangleShape2D_84l03")
+
+[node name="Labels" type="Node2D" parent="."]
+
+[node name="HealthLabel" type="Label" parent="Labels"]
+unique_name_in_owner = true
+visible = false
+offset_left = -287.0
+offset_top = -178.0
+offset_right = 290.0
+offset_bottom = -41.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 100
+
+[node name="XPLabel" type="Label" parent="Labels"]
+offset_left = -288.0
+offset_top = -30.0
+offset_right = 289.0
+offset_bottom = 107.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 100
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(966, 543)
 zoom = Vector2(0.75, 0.75)
 
-[node name="Barrier" type="Node2D" parent="."]
+[node name="LVLUpMenu" parent="Camera2D" instance=ExtResource("6_7e75v")]
+visible = false
+z_index = 12
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
 
-[node name="Barrier1" type="StaticBody2D" parent="Barrier"]
+[node name="PauseMenu" parent="Camera2D" instance=ExtResource("5_wgenn")]
+visible = false
+z_index = 13
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Barrier/Barrier1"]
-position = Vector2(-533, 518)
-shape = SubResource("RectangleShape2D_84l03")
+[node name="GameOverMenu" parent="Camera2D" instance=ExtResource("7_i48sn")]
+visible = false
+z_index = 15
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+size_flags_horizontal = 4
 
-[node name="Barrier2" type="StaticBody2D" parent="Barrier"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Barrier/Barrier2"]
-position = Vector2(2455, 584)
-shape = SubResource("RectangleShape2D_84l03")
-
-[node name="Barrier3" type="StaticBody2D" parent="Barrier"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Barrier/Barrier3"]
-position = Vector2(935, -391)
-rotation = 1.5708
-shape = SubResource("RectangleShape2D_84l03")
-
-[node name="Barrier4" type="StaticBody2D" parent="Barrier"]
-rotation = 1.5708
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Barrier/Barrier4"]
-position = Vector2(1495, -950.005)
-shape = SubResource("RectangleShape2D_84l03")
-
-[node name="HealthLabel" type="Label" parent="."]
-unique_name_in_owner = true
-offset_right = 577.0
-offset_bottom = 64.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 100
+[node name="HeartBar" parent="Camera2D" instance=ExtResource("8_a1kei")]
+visible = false
+z_index = 11
+offset_left = -1287.0
+offset_top = -714.0
+offset_right = -411.0
+offset_bottom = -674.0
+scale = Vector2(3.26839, 3.26839)
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
