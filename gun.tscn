@@ -18,14 +18,89 @@ shape = SubResource("CircleShape2D_hp273")
 [node name="weaponPivot" type="Marker2D" parent="."]
 
 [node name="Pistol" type="Sprite2D" parent="weaponPivot"]
-position = Vector2(97, 2)
-rotation = 0.00599366
+position = Vector2(97, 0)
 scale = Vector2(2.45314, 2.51575)
 texture = ExtResource("2_wqdwd")
 
 [node name="ShootingPoint" type="Marker2D" parent="weaponPivot/Pistol"]
 unique_name_in_owner = true
-position = Vector2(24.526, -3.41378)
+position = Vector2(24, -3.5)
+
+[node name="Pistol2" type="Sprite2D" parent="weaponPivot"]
+visible = false
+position = Vector2(-97, 0)
+scale = Vector2(2.45314, 2.51575)
+texture = ExtResource("2_wqdwd")
+flip_h = true
+
+[node name="ShootingPoint2" type="Marker2D" parent="weaponPivot/Pistol2"]
+unique_name_in_owner = true
+position = Vector2(-24, -3.5)
+rotation = 3.14159
+
+[node name="Pistol3" type="Sprite2D" parent="weaponPivot"]
+visible = false
+position = Vector2(0, 97)
+rotation = 1.5708
+scale = Vector2(2.45314, 2.51575)
+texture = ExtResource("2_wqdwd")
+
+[node name="ShootingPoint3" type="Marker2D" parent="weaponPivot/Pistol3"]
+unique_name_in_owner = true
+position = Vector2(24, -3.5)
+
+[node name="Pistol4" type="Sprite2D" parent="weaponPivot"]
+visible = false
+position = Vector2(0, -97)
+rotation = -1.5708
+scale = Vector2(2.45314, 2.51575)
+texture = ExtResource("2_wqdwd")
+flip_v = true
+
+[node name="ShootingPoint4" type="Marker2D" parent="weaponPivot/Pistol4"]
+position = Vector2(24, 3.5)
+
+[node name="Pistol5" type="Sprite2D" parent="weaponPivot"]
+visible = false
+position = Vector2(-80, -80)
+rotation = -2.35619
+scale = Vector2(2.45314, 2.51575)
+texture = ExtResource("2_wqdwd")
+flip_v = true
+
+[node name="ShootingPoint5" type="Marker2D" parent="weaponPivot/Pistol5"]
+position = Vector2(24, 3.5)
+
+[node name="Pistol6" type="Sprite2D" parent="weaponPivot"]
+visible = false
+position = Vector2(80, -80)
+rotation = -0.785398
+scale = Vector2(2.45314, 2.51575)
+texture = ExtResource("2_wqdwd")
+
+[node name="ShootingPoint6" type="Marker2D" parent="weaponPivot/Pistol6"]
+position = Vector2(24, -3.5)
+
+[node name="Pistol7" type="Sprite2D" parent="weaponPivot"]
+visible = false
+position = Vector2(80, 80)
+rotation = 0.785398
+scale = Vector2(2.45314, 2.51575)
+texture = ExtResource("2_wqdwd")
+flip_v = true
+
+[node name="ShootingPoint7" type="Marker2D" parent="weaponPivot/Pistol7"]
+position = Vector2(24, 3.5)
+
+[node name="Pistol8" type="Sprite2D" parent="weaponPivot"]
+visible = false
+position = Vector2(-80, 80)
+rotation = 2.35619
+scale = Vector2(2.45314, 2.51575)
+texture = ExtResource("2_wqdwd")
+
+[node name="ShootingPoint8" type="Marker2D" parent="weaponPivot/Pistol8"]
+position = Vector2(24, -3.5)
 
 [node name="FireRateTimer" type="Timer" parent="."]
 unique_name_in_owner = true
