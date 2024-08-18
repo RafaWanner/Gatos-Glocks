@@ -1,8 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://dftt4jl7mkbew"]
+[gd_scene load_steps=9 format=3 uid="uid://dftt4jl7mkbew"]
 
 [ext_resource type="Script" path="res://mobs.gd" id="1_mmfub"]
 [ext_resource type="Texture2D" uid="uid://1r28kw5hcuk1" path="res://Assets/Gatos&GlocksSprites/Inimigo1.png" id="2_o6ot3"]
 [ext_resource type="Script" path="res://Inimigo.gd" id="3_el30h"]
+[ext_resource type="AudioStream" uid="uid://dgnq8ncada6uc" path="res://Assets/audios/hit.wav" id="4_wlvqv"]
+[ext_resource type="AudioStream" uid="uid://dyr6mvbvqtbiv" path="res://Assets/audios/exlopsion.wav" id="5_vimwf"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_2vb01"]
 radius = 50.04
@@ -49,3 +51,9 @@ script = ExtResource("3_el30h")
 libraries = {
 "": SubResource("AnimationLibrary_rj765")
 }
+
+[node name="hit" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_wlvqv")
+
+[node name="morte" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_vimwf")

@@ -3,6 +3,9 @@ extends CharacterBody2D
 var health = 3
 
 @onready var player =  get_node("/root/Game/Player")
+@onready var hit = $hit
+@onready var morte = $morte
+
 
 
 func _physics_process(delta):
@@ -12,16 +15,20 @@ func _physics_process(delta):
 	
 	
 func take_damage(amount):
+	hit.play()
 	health -= amount
-
+			
 	
-	if health <= 0:
+	if health <= 0:	
+		
 		const XP_DROP = preload("res://xp.tscn")
 		var xp = XP_DROP.instantiate()
 		get_parent().add_child(xp)
 		xp.global_position = global_position
 		queue_free()
-		
+	
+
+	
 	const SMOKE_EXPLOSION = preload("res://smoke_explosion/smoke_explosion.tscn")
 	var smoke = SMOKE_EXPLOSION.instantiate()
 	get_parent().add_child(smoke)

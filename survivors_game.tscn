@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://cmun2y3te0w2"]
+[gd_scene load_steps=11 format=3 uid="uid://cmun2y3te0w2"]
 
 [ext_resource type="Script" path="res://survivors_game.gd" id="1_fpvdx"]
 [ext_resource type="PackedScene" uid="uid://77c5ugjn8pc3" path="res://player.tscn" id="1_v554i"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://cd4n8lsapjlp3" path="res://lvl_up_menu.tscn" id="6_7e75v"]
 [ext_resource type="PackedScene" uid="uid://u7xreu7vsssh" path="res://game_over_menu.tscn" id="7_i48sn"]
 [ext_resource type="PackedScene" uid="uid://cn65umf10v4gx" path="res://heart_bar.tscn" id="8_a1kei"]
+[ext_resource type="PackedScene" uid="uid://cok1mjsou31pv" path="res://musgas.tscn" id="8_lvlih"]
 
 [sub_resource type="Curve2D" id="Curve2D_qrd0f"]
 _data = {
@@ -146,5 +147,7 @@ offset_top = -714.0
 offset_right = -411.0
 offset_bottom = -674.0
 scale = Vector2(3.26839, 3.26839)
+
+[node name="AudioStreamPlayer2D" parent="." instance=ExtResource("8_lvlih")]
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
