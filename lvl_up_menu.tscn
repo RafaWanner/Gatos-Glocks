@@ -88,9 +88,9 @@ icon = ExtResource("5_txn7w")
 icon_alignment = 1
 expand_icon = true
 
-[connection signal="pressed" from="MarginContainer/HBoxContainer/Upgrade1" to="." method="_on_resume_pressed"]
 [connection signal="pressed" from="MarginContainer/HBoxContainer/Upgrade1" to="." method="_on_upgrade_1_pressed"]
-[connection signal="pressed" from="MarginContainer/HBoxContainer/Upgrade2" to="." method="_on_resume_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/Upgrade1" to="." method="_on_resume_pressed"]
 [connection signal="pressed" from="MarginContainer/HBoxContainer/Upgrade2" to="." method="_on_upgrade_2_pressed"]
-[connection signal="pressed" from="MarginContainer/HBoxContainer/Upgrade3" to="." method="_on_resume_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/Upgrade2" to="." method="_on_resume_pressed"]
 [connection signal="pressed" from="MarginContainer/HBoxContainer/Upgrade3" to="." method="_on_upgrade_3_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/Upgrade3" to="." method="_on_resume_pressed"]

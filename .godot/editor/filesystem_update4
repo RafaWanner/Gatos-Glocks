@@ -7,7 +7,8 @@ res://player.tscn
 res://flower_pot.tscn
 res://heart_bar.tscn
 res://mobs.tscn
-res://mobs.gd
-res://xp.tscn
-res://xp.gd
 res://musgas.tscn
+res://xp.tscn
+res://mobs.gd
+res://player.gd
+res://gun.gd

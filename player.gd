@@ -3,6 +3,9 @@ extends CharacterBody2D
 signal health_deplated
 signal lvlup_screen_is_down
 
+@onready var heart_bar = get_node("/root/Game/Camera2D/HeartBar")
+@onready var death = get_node("/root/Game/Sounds/Death")
+
 var health = 3
 var xp = 0
 var lvlup = 1
@@ -10,8 +13,6 @@ var xp_amount = 1
 var speed = 600
 var invincibility_duration = 1.0  # Tempo de invencibilidade em segundos
 var is_invincible = false
-
-@onready var heart_bar = get_node("/root/Game/Camera2D/HeartBar")
 
 func _ready():
 	heart_bar.show()
@@ -38,6 +39,7 @@ func _physics_process(delta):
 		heart_bar.update_health(health)
 		
 		if health <= 0:
+			death.play()
 			health_deplated.emit()
 			get_node("/root/Game")._game_over_menu()
 		
