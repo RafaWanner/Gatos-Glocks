@@ -3,6 +3,9 @@ extends Area2D
 var damage = 1
 var travelled_distance = 0
 
+var piercing = 0
+var max_piercing = 1
+
 func _physics_process(delta):
 	const SPEED = 1000
 	const RANGE = 1200
@@ -15,6 +18,9 @@ func _physics_process(delta):
 		queue_free()
 
 func _on_body_entered(body):
-	queue_free()
+	piercing += 1
+	if piercing >= max_piercing:
+		queue_free()
+	
 	if body.has_method("take_damage"):
 		body.take_damage(damage)

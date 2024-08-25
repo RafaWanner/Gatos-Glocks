@@ -9,7 +9,7 @@ extends Control
 @onready var upgrade2 = $MarginContainer/HBoxContainer/Upgrade2
 @onready var upgrade3 = $MarginContainer/HBoxContainer/Upgrade3
 
-var upgrades = ["player_hearts", "fire_rate", "bullet_damage", "xp_increasse", "player_speed", "gun_number"]
+var upgrades = ["player_hearts", "fire_rate", "bullet_damage", "xp_increasse", "player_speed", "gun_number", "fire_ball"]
 
 var player_hearts = 3
 var max_player_hearts = 18
@@ -46,6 +46,8 @@ func _random_upgrades():
 			upgrade1.icon = ResourceLoader.load("res://Assets/Gatos&GlocksSprites/Bota.png")
 		"gun_number":
 			upgrade1.icon = ResourceLoader.load("res://Assets/Gatos&GlocksSprites/2Glocks.png")
+		"fire_ball":
+			upgrade1.icon = ResourceLoader.load("res://Assets/Gatos&GlocksSprites/BolaDeFogo.png")
 		_:
 			upgrade1.icon = ResourceLoader.load("res://Assets/Gatos&GlocksSprites/Inimigo1.png")
 	
@@ -70,6 +72,8 @@ func _random_upgrades():
 			upgrade2.icon = ResourceLoader.load("res://Assets/Gatos&GlocksSprites/Bota.png")
 		"gun_number":
 			upgrade2.icon = ResourceLoader.load("res://Assets/Gatos&GlocksSprites/2Glocks.png")
+		"fire_ball":
+			upgrade2.icon = ResourceLoader.load("res://Assets/Gatos&GlocksSprites/BolaDeFogo.png")
 		_:
 			upgrade2.icon = ResourceLoader.load("res://Assets/Gatos&GlocksSprites/Inimigo1.png")
 	
@@ -94,6 +98,8 @@ func _random_upgrades():
 			upgrade3.icon = ResourceLoader.load("res://Assets/Gatos&GlocksSprites/Bota.png")
 		"gun_number":
 			upgrade3.icon = ResourceLoader.load("res://Assets/Gatos&GlocksSprites/2Glocks.png")
+		"fire_ball":
+			upgrade3.icon = ResourceLoader.load("res://Assets/Gatos&GlocksSprites/BolaDeFogo.png")
 		_:
 			upgrade3.icon = ResourceLoader.load("res://Assets/Gatos&GlocksSprites/Inimigo1.png")
 
@@ -128,6 +134,10 @@ func upgrade_gun_number():
 	if gun_number >= max_gun_number:
 		upgrades.erase("gun_number")
 
+func upgrade_fire_ball():
+	gun.can_shoot_fire_ball = true
+	upgrades.erase("fire_ball")
+
 func _on_upgrade_1_pressed():
 	#dar o upgrade
 	match rand_upgrade1:
@@ -143,10 +153,13 @@ func _on_upgrade_1_pressed():
 			upgrade_player_speed()
 		"gun_number":
 			upgrade_gun_number()
+		"fire_ball":
+			upgrade_fire_ball()
 	#dar o upgrade
 	main.is_lvlup_menu = false
 	Engine.time_scale = 1
 	main.lvlup_menu.hide()
+	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
 	player.lvlup_screen_is_down.emit()
 
 func _on_upgrade_2_pressed():
@@ -164,10 +177,13 @@ func _on_upgrade_2_pressed():
 			upgrade_player_speed()
 		"gun_number":
 			upgrade_gun_number()
+		"fire_ball":
+			upgrade_fire_ball()
 	#dar o upgrade
 	main.is_lvlup_menu = false
 	Engine.time_scale = 1
 	main.lvlup_menu.hide()
+	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
 	player.lvlup_screen_is_down.emit()
 
 func _on_upgrade_3_pressed():
@@ -185,8 +201,11 @@ func _on_upgrade_3_pressed():
 			upgrade_player_speed()
 		"gun_number":
 			upgrade_gun_number()
+		"fire_ball":
+			upgrade_fire_ball()
 	#dar o upgrade
 	main.is_lvlup_menu = false
 	Engine.time_scale = 1
 	main.lvlup_menu.hide()
+	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
 	player.lvlup_screen_is_down.emit()

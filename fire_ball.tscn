@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://l0s82kofmfcu"]
+
+[ext_resource type="Script" path="res://fire_ball.gd" id="1_gxuag"]
+[ext_resource type="Texture2D" uid="uid://bq04f21r63aii" path="res://Assets/Gatos&GlocksSprites/BolaDeFogo.png" id="2_m0ugi"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_vpey1"]
+radius = 15.0
+
+[node name="FireBall" type="Area2D"]
+top_level = true
+z_index = 4
+scale = Vector2(3, 3)
+collision_layer = 0
+collision_mask = 3
+script = ExtResource("1_gxuag")
+
+[node name="Projectile" type="Sprite2D" parent="."]
+position = Vector2(-4, 0)
+texture = ExtResource("2_m0ugi")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-2, -1)
+shape = SubResource("CircleShape2D_vpey1")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

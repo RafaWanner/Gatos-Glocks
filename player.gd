@@ -60,3 +60,4 @@ func add_xp():
 		get_node("/root/Game/Player/Gun").is_paused()
 		xp -= lvlup
 		lvlup += + 2 # aumenta o nivel necessario para o lvl up por + 2
+	

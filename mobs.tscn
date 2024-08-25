@@ -1,9 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://dftt4jl7mkbew"]
+[gd_scene load_steps=10 format=3 uid="uid://dftt4jl7mkbew"]
 
 [ext_resource type="Script" path="res://mobs.gd" id="1_mmfub"]
 [ext_resource type="Texture2D" uid="uid://1r28kw5hcuk1" path="res://Assets/Gatos&GlocksSprites/Inimigo1.png" id="2_o6ot3"]
 [ext_resource type="Script" path="res://Inimigo.gd" id="3_el30h"]
-[ext_resource type="AudioStream" uid="uid://dgnq8ncada6uc" path="res://Assets/audios/hit.wav" id="4_wlvqv"]
+[ext_resource type="Texture2D" uid="uid://g0hvyjt6xbc0" path="res://Assets/Gatos&GlocksSprites/Fogo.png" id="4_tg8vm"]
+[ext_resource type="AudioStream" uid="uid://dgnq8ncada6uc" path="res://Assets/Audios/hit.wav" id="4_wlvqv"]
+[ext_resource type="AudioStream" uid="uid://bhd6igiegw0nc" path="res://Assets/Audios/fire.wav" id="6_ww5nd"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_2vb01"]
 radius = 50.04
@@ -51,5 +53,21 @@ libraries = {
 "": SubResource("AnimationLibrary_rj765")
 }
 
+[node name="Fire" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(-1, -38)
+scale = Vector2(3.719, 3.719)
+texture = ExtResource("4_tg8vm")
+
 [node name="hit" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("4_wlvqv")
+
+[node name="FireStartSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_wlvqv")
+
+[node name="FireSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_ww5nd")
+
+[node name="FireDamageTimer" type="Timer" parent="."]
+
+[connection signal="timeout" from="FireDamageTimer" to="." method="_on_fire_damage_timer_timeout"]
