@@ -16,7 +16,6 @@ scale = Vector2(0.607143, 0.711538)
 texture = ExtResource("1_q23vr")
 
 [node name="Flower" type="Sprite2D" parent="."]
-z_index = 1
 position = Vector2(0.999997, -53.5)
 scale = Vector2(4.25, 4.53125)
 texture = ExtResource("2_44qau")

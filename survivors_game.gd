@@ -1,8 +1,8 @@
 extends Node2D
 
-@onready var pause_menu = $Camera2D/PauseMenu
-@onready var lvlup_menu = $Camera2D/LVLUpMenu
-@onready var game_over_menu = $Camera2D/GameOverMenu
+@onready var pause_menu = $CanvasLayer/PauseMenu
+@onready var lvlup_menu = $CanvasLayer/LVLUpMenu
+@onready var game_over_menu = $CanvasLayer/GameOverMenu
 
 var paused = false
 var is_lvlup_menu = false

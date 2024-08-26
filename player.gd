@@ -3,7 +3,7 @@ extends CharacterBody2D
 signal health_deplated
 signal lvlup_screen_is_down
 
-@onready var heart_bar = get_node("/root/Game/Camera2D/HeartBar")
+@onready var heart_bar = get_node("/root/Game/CanvasLayer/HeartBar")
 @onready var death = get_node("/root/Game/Sounds/Death")
 
 var health = 3
