@@ -7,7 +7,7 @@ var paused = false
 
 var shooting = false  # Variável para controlar o estado de disparo
 var can_shoot = true
-var can_shoot_fire_ball = true
+var can_shoot_fire_ball = false
 
 var fire_rate = 0.5
 var shots = 0
