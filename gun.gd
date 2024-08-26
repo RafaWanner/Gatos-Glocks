@@ -29,7 +29,7 @@ func _physics_process(delta):
 	if !paused:
 		if Input.is_action_pressed("shoot") and can_shoot:
 			shots += 1
-			#shoot()
+			shoot()
 			
 			if shots == 3:
 				shots = 0
