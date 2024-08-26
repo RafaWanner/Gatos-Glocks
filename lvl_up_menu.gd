@@ -159,7 +159,6 @@ func _on_upgrade_1_pressed():
 	main.is_lvlup_menu = false
 	Engine.time_scale = 1
 	main.lvlup_menu.hide()
-	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
 	player.lvlup_screen_is_down.emit()
 
 func _on_upgrade_2_pressed():
@@ -183,7 +182,6 @@ func _on_upgrade_2_pressed():
 	main.is_lvlup_menu = false
 	Engine.time_scale = 1
 	main.lvlup_menu.hide()
-	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
 	player.lvlup_screen_is_down.emit()
 
 func _on_upgrade_3_pressed():
@@ -207,5 +205,4 @@ func _on_upgrade_3_pressed():
 	main.is_lvlup_menu = false
 	Engine.time_scale = 1
 	main.lvlup_menu.hide()
-	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
 	player.lvlup_screen_is_down.emit()

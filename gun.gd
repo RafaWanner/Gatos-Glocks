@@ -7,7 +7,7 @@ var paused = false
 
 var shooting = false  # Variável para controlar o estado de disparo
 var can_shoot = true
-var can_shoot_fire_ball = false
+var can_shoot_fire_ball = true
 
 var fire_rate = 0.5
 var shots = 0
@@ -29,7 +29,7 @@ func _physics_process(delta):
 	if !paused:
 		if Input.is_action_pressed("shoot") and can_shoot:
 			shots += 1
-			shoot()
+			#shoot()
 			
 			if shots == 3:
 				shots = 0
@@ -60,10 +60,12 @@ func shoot():
 
 func shoot_fire_ball():
 	const FIRE_BALL = preload("res://fire_ball.tscn")
-	fire_ball_sound.play()
-	var new_fire_ball = FIRE_BALL.instantiate()
-	var shooting_point = $ShootingPoint
-	
-	new_fire_ball.global_position = %ShootingPoint.global_position
-	new_fire_ball.global_rotation = %ShootingPoint.global_rotation
-	%ShootingPoint.add_child(new_fire_ball)
+	var new_fire_ball
+	for i in $weaponPivot.get_child_count():
+		if $weaponPivot.get_child(i).is_visible():
+			fire_ball_sound.play()
+			new_fire_ball = FIRE_BALL.instantiate()
+			
+			new_fire_ball.global_position = $weaponPivot.get_child(i).get_child(0).global_position
+			new_fire_ball.global_rotation = $weaponPivot.get_child(i).get_child(0).global_rotation
+			$weaponPivot.get_child(i).add_child(new_fire_ball) # Adiciona a bala à cena atual

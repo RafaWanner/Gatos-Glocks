@@ -7,9 +7,6 @@ extends Node2D
 var paused = false
 var is_lvlup_menu = false
 
-func _ready():
-	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
-
 func _process(delta):
 	if Input.is_action_just_pressed("pause"):
 		_pause_menu()
@@ -20,10 +17,8 @@ func _pause_menu():
 			Engine.time_scale = 1
 			get_node("/root/Game/Player/Gun").is_paused()
 		pause_menu.hide()
-		Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
 	else:
 		pause_menu.show()
-		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 		if Engine.time_scale != 0:
 			get_node("/root/Game/Player/Gun").is_paused()
 		Engine.time_scale = 0
@@ -34,13 +29,11 @@ func _lvlup_menu():
 	is_lvlup_menu = true
 	lvlup_menu._random_upgrades()
 	lvlup_menu.show()
-	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	Engine.time_scale = 0
 	get_node("/root/Game/Player/Gun").is_paused()
 
 func _game_over_menu():
 	game_over_menu.show()
-	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	if Engine.time_scale != 0:
 		get_node("/root/Game/Player/Gun").is_paused()
 	Engine.time_scale = 0

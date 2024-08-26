@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://u7xreu7vsssh" path="res://game_over_menu.tscn" id="7_i48sn"]
 [ext_resource type="PackedScene" uid="uid://cn65umf10v4gx" path="res://heart_bar.tscn" id="8_a1kei"]
 [ext_resource type="PackedScene" uid="uid://cok1mjsou31pv" path="res://musgas.tscn" id="8_lvlih"]
-[ext_resource type="AudioStream" uid="uid://dyr6mvbvqtbiv" path="res://Assets/Audios/exlopsion.wav" id="9_k5n8b"]
+[ext_resource type="AudioStream" uid="uid://dyr6mvbvqtbiv" path="res://Assets/audios/exlopsion.wav" id="9_k5n8b"]
 
 [sub_resource type="Curve2D" id="Curve2D_qrd0f"]
 _data = {

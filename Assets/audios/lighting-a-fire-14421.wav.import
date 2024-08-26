@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://ch0mwinwta2n5"
-path="res://.godot/imported/lighting-a-fire-14421.wav-7dad265e804fb635d4d835e1096c597f.sample"
+path="res://.godot/imported/lighting-a-fire-14421.wav-08c015a13557a449de269c63e18e7b83.sample"
 
 [deps]
 
-source_file="res://Assets/Audios/lighting-a-fire-14421.wav"
-dest_files=["res://.godot/imported/lighting-a-fire-14421.wav-7dad265e804fb635d4d835e1096c597f.sample"]
+source_file="res://Assets/audios/lighting-a-fire-14421.wav"
+dest_files=["res://.godot/imported/lighting-a-fire-14421.wav-08c015a13557a449de269c63e18e7b83.sample"]
 
 [params]
 
