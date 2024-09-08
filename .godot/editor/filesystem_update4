@@ -6,11 +6,6 @@ res://bullet.tscn
 res://fire_ball.tscn
 res://mobs.tscn
 res://main_menu.tscn
-res://gun.gd
-res://lvl_up_menu.gd
-res://main_menu.gd
-res://survivors_game.gd
 res://player.tscn
-res://player.gd
 res://flower_pot.tscn
 res://heart_bar.tscn
