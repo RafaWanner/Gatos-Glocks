@@ -35,13 +35,13 @@ func _random_upgrades():
 	
 	match rand_upgrade1:
 		"player_hearts":
-			upgrade1.icon = ResourceLoader.load("res://Assets/Gatos&GlocksSprites/Vida.png")
+			upgrade1.icon = ResourceLoader.load("res://Assets/Gatos&GlocksSprites/VidaUpgrade.png")
 		"fire_rate":
-			upgrade1.icon = ResourceLoader.load("res://Assets/Gatos&GlocksSprites/Balet¦o.png")
+			upgrade1.icon = ResourceLoader.load("res://Assets/Gatos&GlocksSprites/FirerateUpgrade.png")
 		"bullet_damage":
 			upgrade1.icon = ResourceLoader.load("res://Assets/Gatos&GlocksSprites/Glocks.png")
 		"xp_increasse":
-			upgrade1.icon = ResourceLoader.load("res://Assets/Gatos&GlocksSprites/XP.png")
+			upgrade1.icon = ResourceLoader.load("res://Assets/Gatos&GlocksSprites/XpUpgrade.png")
 		"player_speed":
 			upgrade1.icon = ResourceLoader.load("res://Assets/Gatos&GlocksSprites/Bota.png")
 		"gun_number":
@@ -61,13 +61,13 @@ func _random_upgrades():
 	
 	match rand_upgrade2:
 		"player_hearts":
-			upgrade2.icon = ResourceLoader.load("res://Assets/Gatos&GlocksSprites/Vida.png")
+			upgrade2.icon = ResourceLoader.load("res://Assets/Gatos&GlocksSprites/VidaUpgrade.png")
 		"fire_rate":
-			upgrade2.icon = ResourceLoader.load("res://Assets/Gatos&GlocksSprites/Balet¦o.png")
+			upgrade2.icon = ResourceLoader.load("res://Assets/Gatos&GlocksSprites/FirerateUpgrade.png")
 		"bullet_damage":
 			upgrade2.icon = ResourceLoader.load("res://Assets/Gatos&GlocksSprites/Glocks.png")
 		"xp_increasse":
-			upgrade2.icon = ResourceLoader.load("res://Assets/Gatos&GlocksSprites/XP.png")
+			upgrade2.icon = ResourceLoader.load("res://Assets/Gatos&GlocksSprites/XpUpgrade.png")
 		"player_speed":
 			upgrade2.icon = ResourceLoader.load("res://Assets/Gatos&GlocksSprites/Bota.png")
 		"gun_number":
@@ -87,13 +87,13 @@ func _random_upgrades():
 	
 	match rand_upgrade3:
 		"player_hearts":
-			upgrade3.icon = ResourceLoader.load("res://Assets/Gatos&GlocksSprites/Vida.png")
+			upgrade3.icon = ResourceLoader.load("res://Assets/Gatos&GlocksSprites/VidaUpgrade.png")
 		"fire_rate":
-			upgrade3.icon = ResourceLoader.load("res://Assets/Gatos&GlocksSprites/Balet¦o.png")
+			upgrade3.icon = ResourceLoader.load("res://Assets/Gatos&GlocksSprites/FirerateUpgrade.png")
 		"bullet_damage":
 			upgrade3.icon = ResourceLoader.load("res://Assets/Gatos&GlocksSprites/Glocks.png")
 		"xp_increasse":
-			upgrade3.icon = ResourceLoader.load("res://Assets/Gatos&GlocksSprites/XP.png")
+			upgrade3.icon = ResourceLoader.load("res://Assets/Gatos&GlocksSprites/XpUpgrade.png")
 		"player_speed":
 			upgrade3.icon = ResourceLoader.load("res://Assets/Gatos&GlocksSprites/Bota.png")
 		"gun_number":

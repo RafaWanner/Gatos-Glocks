@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://7r26uw0er75u"
-path="res://.godot/imported/xp.png-00a05db75a56fbe94a13f73e9ce6dcbe.ctex"
+uid="uid://u5axdgk5yi78"
+path="res://.godot/imported/fireball.png-fe377024cc32a2ac2d108bb2ba536042.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Gatos&GlocksSprites/xp.png"
-dest_files=["res://.godot/imported/xp.png-00a05db75a56fbe94a13f73e9ce6dcbe.ctex"]
+source_file="res://Assets/Gatos&GlocksSprites/fireball.png"
+dest_files=["res://.godot/imported/fireball.png-fe377024cc32a2ac2d108bb2ba536042.ctex"]
 
 [params]
 

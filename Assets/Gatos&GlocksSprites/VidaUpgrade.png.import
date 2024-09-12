@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://7r26uw0er75u"
-path="res://.godot/imported/xp.png-00a05db75a56fbe94a13f73e9ce6dcbe.ctex"
+uid="uid://drw78crhcq6cu"
+path="res://.godot/imported/VidaUpgrade.png-9bb524c453eb08ee4950a45ecedc1e89.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Gatos&GlocksSprites/xp.png"
-dest_files=["res://.godot/imported/xp.png-00a05db75a56fbe94a13f73e9ce6dcbe.ctex"]
+source_file="res://Assets/Gatos&GlocksSprites/VidaUpgrade.png"
+dest_files=["res://.godot/imported/VidaUpgrade.png-9bb524c453eb08ee4950a45ecedc1e89.ctex"]
 
 [params]
 

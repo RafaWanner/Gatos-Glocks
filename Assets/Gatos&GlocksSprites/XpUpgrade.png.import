@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://7r26uw0er75u"
-path="res://.godot/imported/xp.png-00a05db75a56fbe94a13f73e9ce6dcbe.ctex"
+uid="uid://bylwbdhy1goec"
+path="res://.godot/imported/XpUpgrade.png-b7e7e56ae8c9549283fc8b12943ef22c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Gatos&GlocksSprites/xp.png"
-dest_files=["res://.godot/imported/xp.png-00a05db75a56fbe94a13f73e9ce6dcbe.ctex"]
+source_file="res://Assets/Gatos&GlocksSprites/XpUpgrade.png"
+dest_files=["res://.godot/imported/XpUpgrade.png-b7e7e56ae8c9549283fc8b12943ef22c.ctex"]
 
 [params]
 

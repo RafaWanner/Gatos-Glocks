@@ -9,3 +9,5 @@ res://main_menu.tscn
 res://player.tscn
 res://flower_pot.tscn
 res://heart_bar.tscn
+res://lvl_up_menu.gd
+res://xp.tscn

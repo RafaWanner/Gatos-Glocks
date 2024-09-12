@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://7r26uw0er75u"
-path="res://.godot/imported/xp.png-00a05db75a56fbe94a13f73e9ce6dcbe.ctex"
+uid="uid://b144qc1wr8n5n"
+path="res://.godot/imported/FirerateUpgrade.png-d799d003bd2e1ada05bc1f22c2ed24d9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Gatos&GlocksSprites/xp.png"
-dest_files=["res://.godot/imported/xp.png-00a05db75a56fbe94a13f73e9ce6dcbe.ctex"]
+source_file="res://Assets/Gatos&GlocksSprites/FirerateUpgrade.png"
+dest_files=["res://.godot/imported/FirerateUpgrade.png-d799d003bd2e1ada05bc1f22c2ed24d9.ctex"]
 
 [params]
 
