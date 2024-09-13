@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://xp.gd" id="1_j1dj5"]
 [ext_resource type="Texture2D" uid="uid://j0onohx38kxg" path="res://Assets/Gatos&GlocksSprites/xpNovo.png" id="2_k1sd6"]
-[ext_resource type="AudioStream" uid="uid://dyr6mvbvqtbiv" path="res://Assets/audios/exlopsion.wav" id="3_45jpq"]
+[ext_resource type="AudioStream" uid="uid://dyr6mvbvqtbiv" path="res://Assets/Audios/exlopsion.wav" id="3_45jpq"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_pq52e"]
 radius = 36.0555
@@ -12,6 +12,7 @@ scale = Vector2(0.35, 0.35)
 script = ExtResource("1_j1dj5")
 
 [node name="XP" type="Sprite2D" parent="."]
+scale = Vector2(5, 5)
 texture = ExtResource("2_k1sd6")
 
 [node name="Area2D" type="Area2D" parent="."]

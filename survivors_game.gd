@@ -44,5 +44,17 @@ func spawn_mob():
 	new_mob.global_position = %PathFollow2D.global_position
 	add_child(new_mob)
 
+func spawn_mob2():
+	var new_mob = preload("res://mob2.tscn").instantiate()
+	%PathFollow2D.progress_ratio = randf()
+	new_mob.global_position = %PathFollow2D.global_position
+	add_child(new_mob)
+
 func _on_timer_timeout():
 	spawn_mob()
+
+func _on_timer_2_timeout():
+	spawn_mob2()
+
+func _on_timer_2_timer_timeout():
+	$Timer2.start()

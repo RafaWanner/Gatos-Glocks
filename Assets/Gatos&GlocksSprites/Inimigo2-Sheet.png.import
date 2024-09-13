@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://7r26uw0er75u"
-path="res://.godot/imported/XP.png-da421468f1eaae3b15e3b2037924aba0.ctex"
+uid="uid://dbdopybsespvo"
+path="res://.godot/imported/Inimigo2-Sheet.png-f301ebfe3dc34d67b263e9e77a5b734e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Gatos&GlocksSprites/XP.png"
-dest_files=["res://.godot/imported/XP.png-da421468f1eaae3b15e3b2037924aba0.ctex"]
+source_file="res://Assets/Gatos&GlocksSprites/Inimigo2-Sheet.png"
+dest_files=["res://.godot/imported/Inimigo2-Sheet.png-f301ebfe3dc34d67b263e9e77a5b734e.ctex"]
 
 [params]
 

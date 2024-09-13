@@ -1,0 +1,106 @@
+[gd_scene load_steps=14 format=3 uid="uid://cvochsqyctcfv"]
+
+[ext_resource type="Script" path="res://mob2.gd" id="1_2h3mb"]
+[ext_resource type="Texture2D" uid="uid://dbdopybsespvo" path="res://Assets/Gatos&GlocksSprites/Inimigo2-Sheet.png" id="2_c16df"]
+[ext_resource type="Script" path="res://Inimigo.gd" id="3_1u1an"]
+[ext_resource type="Texture2D" uid="uid://g0hvyjt6xbc0" path="res://Assets/Gatos&GlocksSprites/Fogo.png" id="4_vlnc4"]
+[ext_resource type="AudioStream" uid="uid://dgnq8ncada6uc" path="res://Assets/Audios/hit.wav" id="5_sh2xc"]
+[ext_resource type="AudioStream" uid="uid://bhd6igiegw0nc" path="res://Assets/Audios/fire.wav" id="6_wfhob"]
+[ext_resource type="Script" path="res://laser.gd" id="7_2tck6"]
+[ext_resource type="PackedScene" uid="uid://cok1mjsou31pv" path="res://musgas.tscn" id="8_4lg8c"]
+[ext_resource type="AudioStream" uid="uid://bgxoiwiatd5dt" path="res://Assets/Audios/laser-45816.wav" id="9_j2nty"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_2vb01"]
+radius = 50.04
+
+[sub_resource type="Animation" id="Animation_5anvf"]
+resource_name = "inimigo_anda"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [0, 1]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_rj765"]
+_data = {
+"inimigo_anda": SubResource("Animation_5anvf")
+}
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_qf0t0"]
+radius = 364.351
+
+[node name="Mob" type="CharacterBody2D"]
+collision_layer = 2
+collision_mask = 3
+script = ExtResource("1_2h3mb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1, -25)
+shape = SubResource("CircleShape2D_2vb01")
+
+[node name="Inimigo" type="Sprite2D" parent="."]
+position = Vector2(2, -37)
+scale = Vector2(3.71875, 3.71875)
+texture = ExtResource("2_c16df")
+hframes = 2
+script = ExtResource("3_1u1an")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Inimigo"]
+libraries = {
+"": SubResource("AnimationLibrary_rj765")
+}
+
+[node name="Fire" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(-1, -38)
+scale = Vector2(3.719, 3.719)
+texture = ExtResource("4_vlnc4")
+
+[node name="hit" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_sh2xc")
+
+[node name="FireStartSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_sh2xc")
+
+[node name="FireSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_wfhob")
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="Laser" type="Area2D" parent="."]
+script = ExtResource("7_2tck6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Laser"]
+position = Vector2(-1, -25)
+scale = Vector2(0.15, 0.15)
+shape = SubResource("CircleShape2D_qf0t0")
+
+[node name="weaponPivot" type="Marker2D" parent="Laser"]
+position = Vector2(-4, -20)
+
+[node name="Pistol" type="Sprite2D" parent="Laser/weaponPivot"]
+position = Vector2(87, 0)
+scale = Vector2(2.45314, 2.51575)
+
+[node name="ShootingPoint" type="Marker2D" parent="Laser/weaponPivot/Pistol"]
+unique_name_in_owner = true
+
+[node name="LaserShotSound" parent="Laser" instance=ExtResource("8_4lg8c")]
+stream = ExtResource("9_j2nty")
+autoplay = false
+
+[node name="Timer" type="Timer" parent="Laser"]
+wait_time = 2.0
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="Laser/Timer" to="." method="_on_fire_damage_timer_timeout"]
+[connection signal="timeout" from="Laser/Timer" to="Laser" method="_on_timer_timeout"]

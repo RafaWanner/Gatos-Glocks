@@ -1,5 +1,7 @@
-CanvasLayer
 Timer
+CharacterBody2D
+Area2D
+CanvasLayer
 Node2D
 AudioStreamPlayer2D
 AnimationPlayer
@@ -10,6 +12,3 @@ TextureRect
 HBoxContainer
 CenterContainer
 VBoxContainer
-Button
-Label
-Panel

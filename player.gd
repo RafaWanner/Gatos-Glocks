@@ -45,6 +45,19 @@ func _physics_process(delta):
 		
 		_start_invincibility()
 
+func _receive_damage(DAMAGE_RATE):
+	if not is_invincible:
+		health -= DAMAGE_RATE
+		get_node("/root/Game/Labels/HealthLabel").text = str(health)
+		heart_bar.update_health(health)
+		
+		if health <= 0:
+			death.play()
+			health_deplated.emit()
+			get_node("/root/Game")._game_over_menu()
+		
+		_start_invincibility()
+
 func _start_invincibility():
 	is_invincible = true
 	await(get_tree().create_timer(invincibility_duration).timeout)

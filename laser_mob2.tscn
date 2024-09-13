@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://bqvv6jufdh03s"]
+
+[ext_resource type="Script" path="res://laser_mob2.gd" id="1_sye4d"]
+[ext_resource type="Texture2D" uid="uid://cpm6hoad7oh2g" path="res://Assets/Gatos&GlocksSprites/Baleta_vermelha.png" id="2_1s77a"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_vpey1"]
+radius = 15.0
+
+[node name="Laser" type="Area2D"]
+top_level = true
+collision_layer = 0
+collision_mask = 3
+script = ExtResource("1_sye4d")
+
+[node name="Projectile" type="Sprite2D" parent="."]
+position = Vector2(-12, -1)
+rotation = 1.5708
+scale = Vector2(1.70871, 2.64872)
+texture = ExtResource("2_1s77a")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-2, -1)
+shape = SubResource("CircleShape2D_vpey1")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

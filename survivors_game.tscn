@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://u7xreu7vsssh" path="res://game_over_menu.tscn" id="7_i48sn"]
 [ext_resource type="PackedScene" uid="uid://cn65umf10v4gx" path="res://heart_bar.tscn" id="8_a1kei"]
 [ext_resource type="PackedScene" uid="uid://cok1mjsou31pv" path="res://musgas.tscn" id="8_lvlih"]
-[ext_resource type="AudioStream" uid="uid://dyr6mvbvqtbiv" path="res://Assets/audios/exlopsion.wav" id="9_k5n8b"]
+[ext_resource type="AudioStream" uid="uid://dyr6mvbvqtbiv" path="res://Assets/Audios/exlopsion.wav" id="9_k5n8b"]
 
 [sub_resource type="Curve2D" id="Curve2D_qrd0f"]
 _data = {
@@ -108,6 +108,14 @@ rotation = -1.56332
 [node name="Timer" type="Timer" parent="."]
 autostart = true
 
+[node name="Timer2" type="Timer" parent="."]
+wait_time = 2.0
+
+[node name="Timer2Timer" type="Timer" parent="."]
+wait_time = 0.001
+one_shot = true
+autostart = true
+
 [node name="Barriers" type="Node2D" parent="."]
 
 [node name="Barrier1" type="StaticBody2D" parent="Barriers"]
@@ -190,3 +198,8 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="Timer2" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="Timer2" to="." method="_on_timer_2_timeout"]
+[connection signal="timeout" from="Timer2Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="Timer2Timer" to="." method="_on_timer_2_timeout"]
+[connection signal="timeout" from="Timer2Timer" to="." method="_on_timer_2_timer_timeout"]

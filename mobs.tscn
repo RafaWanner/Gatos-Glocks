@@ -4,8 +4,8 @@
 [ext_resource type="Texture2D" uid="uid://1r28kw5hcuk1" path="res://Assets/Gatos&GlocksSprites/Inimigo1.png" id="2_o6ot3"]
 [ext_resource type="Script" path="res://Inimigo.gd" id="3_el30h"]
 [ext_resource type="Texture2D" uid="uid://g0hvyjt6xbc0" path="res://Assets/Gatos&GlocksSprites/Fogo.png" id="4_tg8vm"]
-[ext_resource type="AudioStream" uid="uid://dgnq8ncada6uc" path="res://Assets/audios/hit.wav" id="4_wlvqv"]
-[ext_resource type="AudioStream" uid="uid://bhd6igiegw0nc" path="res://Assets/audios/fire.wav" id="6_ww5nd"]
+[ext_resource type="AudioStream" uid="uid://dgnq8ncada6uc" path="res://Assets/Audios/hit.wav" id="4_wlvqv"]
+[ext_resource type="AudioStream" uid="uid://bhd6igiegw0nc" path="res://Assets/Audios/fire.wav" id="6_ww5nd"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_2vb01"]
 radius = 50.04
@@ -45,7 +45,6 @@ position = Vector2(2, -37)
 scale = Vector2(3.71875, 3.71875)
 texture = ExtResource("2_o6ot3")
 hframes = 2
-frame = 1
 script = ExtResource("3_el30h")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Inimigo"]

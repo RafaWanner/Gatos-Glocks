@@ -3,8 +3,8 @@
 [ext_resource type="Script" path="res://gun.gd" id="1_e4k7e"]
 [ext_resource type="Texture2D" uid="uid://bvr3x3is8mear" path="res://Assets/Gatos&GlocksSprites/Glocks.png" id="2_wqdwd"]
 [ext_resource type="PackedScene" uid="uid://cok1mjsou31pv" path="res://musgas.tscn" id="3_o3mvu"]
-[ext_resource type="AudioStream" uid="uid://cdrx42m1yrlhm" path="res://Assets/audios/gun_shot.mp3" id="4_7qrxc"]
-[ext_resource type="AudioStream" uid="uid://h3ngb7uaug3d" path="res://Assets/audios/fireball.wav" id="5_s03is"]
+[ext_resource type="AudioStream" uid="uid://cdrx42m1yrlhm" path="res://Assets/Audios/gun_shot.mp3" id="4_7qrxc"]
+[ext_resource type="AudioStream" uid="uid://h3ngb7uaug3d" path="res://Assets/Audios/fireball.wav" id="5_s03is"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_hp273"]
 radius = 364.351

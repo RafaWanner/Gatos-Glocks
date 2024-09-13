@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://dyr6mvbvqtbiv"
-path="res://.godot/imported/exlopsion.wav-fe065c17125f50764d9cbd07d6de2dc1.sample"
+path="res://.godot/imported/exlopsion.wav-16e4b65a5067848d4e9af2568d15be61.sample"
 
 [deps]
 
-source_file="res://Assets/audios/exlopsion.wav"
-dest_files=["res://.godot/imported/exlopsion.wav-fe065c17125f50764d9cbd07d6de2dc1.sample"]
+source_file="res://Assets/Audios/exlopsion.wav"
+dest_files=["res://.godot/imported/exlopsion.wav-16e4b65a5067848d4e9af2568d15be61.sample"]
 
 [params]
 

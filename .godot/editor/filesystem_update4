@@ -1,5 +1,6 @@
-res://survivors_game.tscn
+res://xp.tscn
 res://pause_menu.gdshader
+res://survivors_game.tscn
 res://lvl_up_menu.tscn
 res://gun.tscn
 res://bullet.tscn
@@ -9,5 +10,12 @@ res://main_menu.tscn
 res://player.tscn
 res://flower_pot.tscn
 res://heart_bar.tscn
-res://lvl_up_menu.gd
-res://xp.tscn
+res://survivors_game.gd
+res://mob2.gd
+res://mob2.tscn
+res://laser.gd
+res://laser_mob2.tscn
+res://Bullet.gd
+res://player.gd
+res://laser_mob2.gd
+res://fire_ball.gd

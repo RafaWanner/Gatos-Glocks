@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://7r26uw0er75u"
-path="res://.godot/imported/XP.png-da421468f1eaae3b15e3b2037924aba0.ctex"
+uid="uid://cpm6hoad7oh2g"
+path="res://.godot/imported/Baleta_vermelha.png-598cf937658786bf4065e4124aa1732f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Gatos&GlocksSprites/XP.png"
-dest_files=["res://.godot/imported/XP.png-da421468f1eaae3b15e3b2037924aba0.ctex"]
+source_file="res://Assets/Gatos&GlocksSprites/Baleta_vermelha.png"
+dest_files=["res://.godot/imported/Baleta_vermelha.png-598cf937658786bf4065e4124aa1732f.ctex"]
 
 [params]
 
