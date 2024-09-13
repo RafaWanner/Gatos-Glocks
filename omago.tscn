@@ -38,17 +38,17 @@ stream = ExtResource("4_nh5nm")
 script = ExtResource("5_bweol")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="MagiaInsana"]
-position = Vector2(2, -3)
+position = Vector2(0, 2)
 shape = SubResource("CircleShape2D_56ngi")
 
 [node name="WeaponPivot" type="Marker2D" parent="MagiaInsana"]
-position = Vector2(7, 2)
+position = Vector2(2, 2)
 
 [node name="Sprite2D" type="Sprite2D" parent="MagiaInsana/WeaponPivot"]
 
-[node name="ShootingPoint" type="Marker2D" parent="MagiaInsana/WeaponPivot/Sprite2D"]
+[node name="TiroMago" type="Marker2D" parent="MagiaInsana/WeaponPivot/Sprite2D"]
 unique_name_in_owner = true
-position = Vector2(105, 1)
+position = Vector2(121, -2)
 
 [node name="Timer" type="Timer" parent="MagiaInsana"]
 autostart = true
@@ -58,11 +58,11 @@ position = Vector2(3, 4)
 stream = ExtResource("6_a3i76")
 
 [node name="FireStartSound" type="AudioStreamPlayer2D" parent="."]
-position = Vector2(-3, 1)
+position = Vector2(0, 1)
 stream = ExtResource("4_nh5nm")
 
 [node name="FireSound" type="AudioStreamPlayer2D" parent="."]
-position = Vector2(2, 1)
+position = Vector2(2, 2)
 stream = ExtResource("7_bpb1y")
 
 [node name="Timer" type="Timer" parent="."]

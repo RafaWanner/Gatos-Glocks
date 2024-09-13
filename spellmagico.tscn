@@ -1,7 +1,28 @@
-[gd_scene load_steps=4 format=3 uid="uid://gud5nd5nmlfk"]
+[gd_scene load_steps=7 format=3 uid="uid://gud5nd5nmlfk"]
 
 [ext_resource type="Script" path="res://spellmagico.gd" id="1_wfe1m"]
 [ext_resource type="Texture2D" uid="uid://cherjphvulnsq" path="res://Assets/Gatos&GlocksSprites/PROJETILDOMAGOOOOOOOOOOOOO.png" id="2_3uq01"]
+[ext_resource type="Script" path="res://Sprite2D.gd" id="3_r0dkd"]
+
+[sub_resource type="Animation" id="Animation_dgm3d"]
+resource_name = "main"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [0, 1]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_5yyjv"]
+_data = {
+"main": SubResource("Animation_dgm3d")
+}
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_6digi"]
 radius = 18.4391
@@ -14,6 +35,12 @@ position = Vector2(4, 3)
 scale = Vector2(3.07813, 3.07813)
 texture = ExtResource("2_3uq01")
 hframes = 2
+script = ExtResource("3_r0dkd")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite2D"]
+libraries = {
+"": SubResource("AnimationLibrary_5yyjv")
+}
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(5, -1)

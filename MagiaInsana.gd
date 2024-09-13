@@ -25,9 +25,9 @@ func shoot():
 	new_laser = LASER.instantiate()
 	new_laser.damage = damage
 	
-	new_laser.global_position = %ShootingPoint.global_position
-	new_laser.global_rotation = %ShootingPoint.global_rotation
-	%ShootingPoint.add_child(new_laser) # Adiciona a bala à cena atual
+	new_laser.global_position = %TiroMago.global_position
+	new_laser.global_rotation = %TiroMago.global_rotation
+	%TiroMago.add_child(new_laser) # Adiciona a bala à cena atual
 
 
 func _on_timer_timeout():

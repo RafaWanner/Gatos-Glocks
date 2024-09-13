@@ -1,3 +1,6 @@
+AnimationPlayer
+ColorRect
+TextureRect
 Timer
 CollisionShape2D
 Sprite2D
@@ -5,10 +8,7 @@ Area2D
 AudioStreamPlayer2D
 Marker2D
 CharacterBody2D
-AnimationPlayer
 CanvasLayer
 Node2D
 AnimationTree
 TextureButton
-TextureRect
-HBoxContainer

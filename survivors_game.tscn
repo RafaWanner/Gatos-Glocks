@@ -185,17 +185,9 @@ layer = -30
 follow_viewport_enabled = true
 
 [node name="ColorRect" type="ColorRect" parent="BackGround"]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -1288.0
-offset_top = -732.0
-offset_right = 1288.0
-offset_bottom = 732.0
-grow_horizontal = 2
-grow_vertical = 2
+offset_left = -16.0
+offset_right = 2568.0
+offset_bottom = 1457.0
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="timeout" from="Timer2" to="." method="_on_timer_timeout"]
