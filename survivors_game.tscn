@@ -198,8 +198,8 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
-[connection signal="timeout" from="Timer2" to="." method="_on_timer_2_timeout"]
 [connection signal="timeout" from="Timer2" to="." method="_on_timer_timeout"]
-[connection signal="timeout" from="Timer2Timer" to="." method="_on_timer_2_timeout"]
-[connection signal="timeout" from="Timer2Timer" to="." method="_on_timer_2_timer_timeout"]
+[connection signal="timeout" from="Timer2" to="." method="_on_timer_2_timeout"]
 [connection signal="timeout" from="Timer2Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="Timer2Timer" to="." method="_on_timer_2_timer_timeout"]
+[connection signal="timeout" from="Timer2Timer" to="." method="_on_timer_2_timeout"]

@@ -1,7 +1,7 @@
 [gd_scene load_steps=14 format=3 uid="uid://cvochsqyctcfv"]
 
 [ext_resource type="Script" path="res://mob2.gd" id="1_2h3mb"]
-[ext_resource type="Texture2D" uid="uid://dbdopybsespvo" path="res://Assets/Gatos&GlocksSprites/Inimigo2-Sheet.png" id="2_c16df"]
+[ext_resource type="Texture2D" uid="uid://d105de7yyj632" path="res://Assets/Gatos&GlocksSprites/InimigoNovo.png" id="2_74w24"]
 [ext_resource type="Script" path="res://Inimigo.gd" id="3_1u1an"]
 [ext_resource type="Texture2D" uid="uid://g0hvyjt6xbc0" path="res://Assets/Gatos&GlocksSprites/Fogo.png" id="4_vlnc4"]
 [ext_resource type="AudioStream" uid="uid://dgnq8ncada6uc" path="res://Assets/audios/hit.wav" id="5_sh2xc"]
@@ -49,7 +49,7 @@ shape = SubResource("CircleShape2D_2vb01")
 [node name="Inimigo" type="Sprite2D" parent="."]
 position = Vector2(2, -37)
 scale = Vector2(3.71875, 3.71875)
-texture = ExtResource("2_c16df")
+texture = ExtResource("2_74w24")
 hframes = 2
 script = ExtResource("3_1u1an")
 

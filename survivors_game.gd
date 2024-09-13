@@ -49,12 +49,19 @@ func spawn_mob2():
 	%PathFollow2D.progress_ratio = randf()
 	new_mob.global_position = %PathFollow2D.global_position
 	add_child(new_mob)
+	
+func spawn_mob3():
+	var  new_mob = preload("res://omago.tscn").instantiate()
+	%PathFollow2D.progress_ratio = randf()
+	new_mob.global_position = %PathFollow2D.global_position
+	add_child(new_mob)
 
 func _on_timer_timeout():
-	spawn_mob()
+	spawn_mob3()
 
 func _on_timer_2_timeout():
 	spawn_mob2()
+	
 
 func _on_timer_2_timer_timeout():
 	$Timer2.start()
