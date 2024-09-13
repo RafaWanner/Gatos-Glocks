@@ -4,11 +4,11 @@
 [ext_resource type="Texture2D" uid="uid://dbdopybsespvo" path="res://Assets/Gatos&GlocksSprites/Inimigo2-Sheet.png" id="2_c16df"]
 [ext_resource type="Script" path="res://Inimigo.gd" id="3_1u1an"]
 [ext_resource type="Texture2D" uid="uid://g0hvyjt6xbc0" path="res://Assets/Gatos&GlocksSprites/Fogo.png" id="4_vlnc4"]
-[ext_resource type="AudioStream" uid="uid://dgnq8ncada6uc" path="res://Assets/Audios/hit.wav" id="5_sh2xc"]
-[ext_resource type="AudioStream" uid="uid://bhd6igiegw0nc" path="res://Assets/Audios/fire.wav" id="6_wfhob"]
+[ext_resource type="AudioStream" uid="uid://dgnq8ncada6uc" path="res://Assets/audios/hit.wav" id="5_sh2xc"]
+[ext_resource type="AudioStream" uid="uid://bhd6igiegw0nc" path="res://Assets/audios/fire.wav" id="6_wfhob"]
 [ext_resource type="Script" path="res://laser.gd" id="7_2tck6"]
 [ext_resource type="PackedScene" uid="uid://cok1mjsou31pv" path="res://musgas.tscn" id="8_4lg8c"]
-[ext_resource type="AudioStream" uid="uid://bgxoiwiatd5dt" path="res://Assets/Audios/laser-45816.wav" id="9_j2nty"]
+[ext_resource type="AudioStream" uid="uid://bgxoiwiatd5dt" path="res://Assets/audios/laser-45816.wav" id="9_j2nty"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_2vb01"]
 radius = 50.04
