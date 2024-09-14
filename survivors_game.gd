@@ -57,11 +57,21 @@ func spawn_mob3():
 	add_child(new_mob)
 
 func _on_timer_timeout():
-	spawn_mob3()
+	spawn_mob()
 
 func _on_timer_2_timeout():
 	spawn_mob2()
 	
+func _on_timer_3_timeout():
+	spawn_mob3()
 
 func _on_timer_2_timer_timeout():
 	$Timer2.start()
+
+
+
+
+func _on_timer_3_timer_timeout():
+	$Timer3.start()
+
+

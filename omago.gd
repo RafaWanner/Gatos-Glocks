@@ -1,12 +1,12 @@
 extends CharacterBody2D
 
-var health = 1
+var health = 15
 
 @onready var player =  get_node("/root/Game/Player")
 @onready var hit = $hit
 @onready var fire = $Fire
 @onready var death = get_node("/root/Game/Sounds/Death")
-@onready var FireDamageTimer = $MagiaInsana/Timer
+@onready var FireDamageTimer = $Timer
 @onready var fire_start_sound = $FireStartSound
 @onready var fire_sound = $FireSound
 
@@ -30,6 +30,11 @@ func take_damage(amount):
 		get_parent().add_child(xp)
 		xp.global_position = global_position
 		queue_free()
+		
+	const SMOKE_EXPLOSION = preload("res://smoke_explosion/smoke_explosion.tscn")
+	var smoke = SMOKE_EXPLOSION.instantiate()
+	get_parent().add_child(smoke)
+	smoke.global_position = global_position
 
 func set_on_fire(damage):
 	fire.show()

@@ -7,7 +7,7 @@ var piercing = 0
 var max_piercing = 100
 
 func _physics_process(delta):
-	const SPEED = 1000
+	const SPEED = 200
 	const RANGE = 1200
 	
 	var direction = Vector2.RIGHT.rotated(rotation)

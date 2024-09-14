@@ -84,7 +84,7 @@ scale = Vector2(0.15, 0.15)
 shape = SubResource("CircleShape2D_qf0t0")
 
 [node name="weaponPivot" type="Marker2D" parent="Laser"]
-position = Vector2(-4, -20)
+position = Vector2(-1, 1)
 
 [node name="Pistol" type="Sprite2D" parent="Laser/weaponPivot"]
 position = Vector2(87, 0)

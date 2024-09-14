@@ -73,7 +73,6 @@ horizontal_alignment = 1
 [node name="TextureRect" type="TextureRect" parent="Panel/MarginContainer/VBoxContainer"]
 layout_mode = 2
 texture = ExtResource("2_b2yi2")
-stretch_mode = 5
 
 [node name="CenterContainer" type="CenterContainer" parent="Panel/MarginContainer/VBoxContainer"]
 layout_mode = 2

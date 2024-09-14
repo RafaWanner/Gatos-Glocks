@@ -4,15 +4,15 @@
 [ext_resource type="Texture2D" uid="uid://cxcegvdf2hw6r" path="res://Assets/Gatos&GlocksSprites/OMAGO.png" id="2_r0xo3"]
 [ext_resource type="Texture2D" uid="uid://g0hvyjt6xbc0" path="res://Assets/Gatos&GlocksSprites/Fogo.png" id="3_ixfgy"]
 [ext_resource type="AudioStream" uid="uid://dgnq8ncada6uc" path="res://Assets/audios/hit.wav" id="4_nh5nm"]
-[ext_resource type="Script" path="res://MagiaInsana.gd" id="5_bweol"]
+[ext_resource type="Script" path="res://magicas.gd" id="6_6008x"]
 [ext_resource type="AudioStream" uid="uid://g5y18ekxdmov" path="res://Assets/audios/magiaSpell.mp3" id="6_a3i76"]
 [ext_resource type="AudioStream" uid="uid://bhd6igiegw0nc" path="res://Assets/audios/fire.wav" id="7_bpb1y"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_u61ul"]
-radius = 87.023
+radius = 90.0056
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_56ngi"]
-radius = 84.0952
+[sub_resource type="CircleShape2D" id="CircleShape2D_lidvr"]
+radius = 98.0051
 
 [node name="OMAGO" type="CharacterBody2D"]
 script = ExtResource("1_b2t68")
@@ -21,7 +21,7 @@ script = ExtResource("1_b2t68")
 shape = SubResource("CircleShape2D_u61ul")
 
 [node name="OMAGOSPRITE" type="Sprite2D" parent="."]
-position = Vector2(-6, -4)
+position = Vector2(3, -4)
 scale = Vector2(5.34473, 5.62603)
 texture = ExtResource("2_r0xo3")
 
@@ -34,38 +34,38 @@ texture = ExtResource("3_ixfgy")
 [node name="hit" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("4_nh5nm")
 
-[node name="MagiaInsana" type="Area2D" parent="."]
-script = ExtResource("5_bweol")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="MagiaInsana"]
-position = Vector2(0, 2)
-shape = SubResource("CircleShape2D_56ngi")
-
-[node name="WeaponPivot" type="Marker2D" parent="MagiaInsana"]
-position = Vector2(2, 2)
-
-[node name="Sprite2D" type="Sprite2D" parent="MagiaInsana/WeaponPivot"]
-
-[node name="TiroMago" type="Marker2D" parent="MagiaInsana/WeaponPivot/Sprite2D"]
-unique_name_in_owner = true
-position = Vector2(121, -2)
-
-[node name="Timer" type="Timer" parent="MagiaInsana"]
-autostart = true
-
-[node name="magiaSpell" type="AudioStreamPlayer2D" parent="MagiaInsana"]
-position = Vector2(3, 4)
-stream = ExtResource("6_a3i76")
-
 [node name="FireStartSound" type="AudioStreamPlayer2D" parent="."]
-position = Vector2(0, 1)
+position = Vector2(-1, -7)
 stream = ExtResource("4_nh5nm")
 
 [node name="FireSound" type="AudioStreamPlayer2D" parent="."]
-position = Vector2(2, 2)
+position = Vector2(-1, 2)
 stream = ExtResource("7_bpb1y")
 
 [node name="Timer" type="Timer" parent="."]
 
-[connection signal="timeout" from="MagiaInsana/Timer" to="MagiaInsana" method="_on_timer_timeout"]
+[node name="Area2D" type="Area2D" parent="."]
+script = ExtResource("6_6008x")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_lidvr")
+
+[node name="Marker2D" type="Marker2D" parent="Area2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="Area2D/Marker2D"]
+
+[node name="TIROMAGO" type="Marker2D" parent="Area2D/Marker2D/Sprite2D"]
+unique_name_in_owner = true
+position = Vector2(140, -1)
+
+[node name="spellmagic" type="AudioStreamPlayer2D" parent="Area2D"]
+unique_name_in_owner = true
+position = Vector2(-6, -1)
+stream = ExtResource("6_a3i76")
+
+[node name="Timer" type="Timer" parent="Area2D"]
+wait_time = 3.0
+autostart = true
+
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="Area2D/Timer" to="Area2D" method="_on_timer_timeout"]

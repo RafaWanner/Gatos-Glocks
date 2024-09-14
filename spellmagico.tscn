@@ -28,6 +28,9 @@ _data = {
 radius = 18.4391
 
 [node name="spellmagico" type="Area2D"]
+top_level = true
+collision_layer = 0
+collision_mask = 3
 script = ExtResource("1_wfe1m")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

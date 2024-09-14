@@ -1,14 +1,15 @@
-[gd_scene load_steps=12 format=3 uid="uid://cmun2y3te0w2"]
+[gd_scene load_steps=14 format=3 uid="uid://cmun2y3te0w2"]
 
 [ext_resource type="Script" path="res://survivors_game.gd" id="1_fpvdx"]
 [ext_resource type="PackedScene" uid="uid://77c5ugjn8pc3" path="res://player.tscn" id="1_v554i"]
-[ext_resource type="PackedScene" uid="uid://cljcinfnofsfl" path="res://flower_pot.tscn" id="3_pwtpi"]
 [ext_resource type="PackedScene" uid="uid://ble3vu7nsby2i" path="res://pause_menu.tscn" id="5_wgenn"]
 [ext_resource type="PackedScene" uid="uid://cd4n8lsapjlp3" path="res://lvl_up_menu.tscn" id="6_7e75v"]
 [ext_resource type="PackedScene" uid="uid://u7xreu7vsssh" path="res://game_over_menu.tscn" id="7_i48sn"]
+[ext_resource type="Script" path="res://Labels.gd" id="7_wfnwv"]
 [ext_resource type="PackedScene" uid="uid://cn65umf10v4gx" path="res://heart_bar.tscn" id="8_a1kei"]
 [ext_resource type="PackedScene" uid="uid://cok1mjsou31pv" path="res://musgas.tscn" id="8_lvlih"]
 [ext_resource type="AudioStream" uid="uid://dyr6mvbvqtbiv" path="res://Assets/audios/exlopsion.wav" id="9_k5n8b"]
+[ext_resource type="Texture2D" uid="uid://cvsxhb4vcsw76" path="res://Assets/Gatos&GlocksSprites/merdadofundo.png" id="10_3tmyt"]
 
 [sub_resource type="Curve2D" id="Curve2D_qrd0f"]
 _data = {
@@ -18,6 +19,9 @@ point_count = 6
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_84l03"]
 size = Vector2(107.125, 3006.5)
+
+[sub_resource type="SystemFont" id="SystemFont_ipwfc"]
+font_names = PackedStringArray("Comic Sans MS")
 
 [node name="Game" type="Node2D"]
 y_sort_enabled = true
@@ -83,18 +87,6 @@ position = Vector2(1288, 728)
 [node name="Flowers" type="Node2D" parent="."]
 y_sort_enabled = true
 
-[node name="FlowerPot1" parent="Flowers" instance=ExtResource("3_pwtpi")]
-y_sort_enabled = true
-position = Vector2(1008, 1160)
-
-[node name="FlowerPot2" parent="Flowers" instance=ExtResource("3_pwtpi")]
-y_sort_enabled = true
-position = Vector2(528, 680)
-
-[node name="FlowerPot3" parent="Flowers" instance=ExtResource("3_pwtpi")]
-y_sort_enabled = true
-position = Vector2(1760, 216)
-
 [node name="Path2D" type="Path2D" parent="."]
 position = Vector2(40.0001, 144)
 scale = Vector2(1.09978, 0.788973)
@@ -106,15 +98,24 @@ position = Vector2(-77.0916, 1685.04)
 rotation = -1.56332
 
 [node name="Timer" type="Timer" parent="."]
+wait_time = 2.0
 autostart = true
 
 [node name="Timer2" type="Timer" parent="."]
-wait_time = 2.0
+wait_time = 5.0
 
 [node name="Timer2Timer" type="Timer" parent="."]
 wait_time = 15.0
 one_shot = true
 autostart = true
+
+[node name="Timer3Timer" type="Timer" parent="."]
+wait_time = 30.0
+one_shot = true
+autostart = true
+
+[node name="Timer3" type="Timer" parent="."]
+wait_time = 10.0
 
 [node name="Barriers" type="Node2D" parent="."]
 
@@ -148,6 +149,7 @@ position = Vector2(1324, -950.005)
 shape = SubResource("RectangleShape2D_84l03")
 
 [node name="Labels" type="Node2D" parent="."]
+script = ExtResource("7_wfnwv")
 
 [node name="HealthLabel" type="Label" parent="Labels"]
 unique_name_in_owner = true
@@ -168,6 +170,15 @@ offset_bottom = 107.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 100
 
+[node name="ScoreLabel" type="Label" parent="Labels"]
+offset_left = 2048.0
+offset_top = 72.0
+offset_right = 2190.0
+offset_bottom = 345.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = SubResource("SystemFont_ipwfc")
+theme_override_font_sizes/font_size = 150
+
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(1280, 720)
 
@@ -185,13 +196,23 @@ layer = -30
 follow_viewport_enabled = true
 
 [node name="ColorRect" type="ColorRect" parent="BackGround"]
-offset_left = -16.0
-offset_right = 2568.0
-offset_bottom = 1457.0
+offset_top = -8.0
+offset_right = 2584.0
+offset_bottom = 1449.0
+color = Color(0.94902, 0.929412, 0.85098, 1)
+
+[node name="TextureRect" type="TextureRect" parent="BackGround"]
+offset_left = -9584.0
+offset_top = -2416.0
+offset_right = -3896.0
+offset_bottom = 3272.0
+texture = ExtResource("10_3tmyt")
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
-[connection signal="timeout" from="Timer2" to="." method="_on_timer_timeout"]
 [connection signal="timeout" from="Timer2" to="." method="_on_timer_2_timeout"]
-[connection signal="timeout" from="Timer2Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="Timer2" to="." method="_on_timer_timeout"]
 [connection signal="timeout" from="Timer2Timer" to="." method="_on_timer_2_timer_timeout"]
 [connection signal="timeout" from="Timer2Timer" to="." method="_on_timer_2_timeout"]
+[connection signal="timeout" from="Timer2Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="Timer3Timer" to="." method="_on_timer_3_timer_timeout"]
+[connection signal="timeout" from="Timer3" to="." method="_on_timer_3_timeout"]

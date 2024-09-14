@@ -1,5 +1,6 @@
-res://spellmagico.tscn
+res://omago.tscn
 res://pause_menu.gdshader
+res://mob2.tscn
 res://survivors_game.tscn
 res://lvl_up_menu.tscn
 res://gun.tscn
@@ -11,10 +12,13 @@ res://heart_bar.tscn
 res://fire_ball.tscn
 res://xp.tscn
 res://laser_mob2.tscn
-res://mob2.tscn
 res://mobs.tscn
-res://omago.tscn
+res://spellmagico.tscn
 res://musgas.tscn
-res://Sprite2D.gd
-res://MagiaInsana.gd
 res://controles.tscn
+res://magicas.gd
+res://spellmagico.gd
+res://survivors_game.gd
+res://omago.gd
+res://mobs.gd
+res://Labels.gd
