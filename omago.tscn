@@ -3,10 +3,10 @@
 [ext_resource type="Script" path="res://omago.gd" id="1_b2t68"]
 [ext_resource type="Texture2D" uid="uid://cxcegvdf2hw6r" path="res://Assets/Gatos&GlocksSprites/OMAGO.png" id="2_r0xo3"]
 [ext_resource type="Texture2D" uid="uid://g0hvyjt6xbc0" path="res://Assets/Gatos&GlocksSprites/Fogo.png" id="3_ixfgy"]
-[ext_resource type="AudioStream" uid="uid://dgnq8ncada6uc" path="res://Assets/Audios/hit.wav" id="4_nh5nm"]
+[ext_resource type="AudioStream" uid="uid://dgnq8ncada6uc" path="res://Assets/audios/hit.wav" id="4_nh5nm"]
 [ext_resource type="Script" path="res://magicas.gd" id="6_6008x"]
-[ext_resource type="AudioStream" uid="uid://g5y18ekxdmov" path="res://Assets/Audios/magiaSpell.mp3" id="6_a3i76"]
-[ext_resource type="AudioStream" uid="uid://bhd6igiegw0nc" path="res://Assets/Audios/fire.wav" id="7_bpb1y"]
+[ext_resource type="AudioStream" uid="uid://g5y18ekxdmov" path="res://Assets/audios/magiaSpell.mp3" id="6_a3i76"]
+[ext_resource type="AudioStream" uid="uid://bhd6igiegw0nc" path="res://Assets/audios/fire.wav" id="7_bpb1y"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_u61ul"]
 radius = 90.0056

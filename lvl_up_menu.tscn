@@ -4,7 +4,7 @@
 [ext_resource type="Shader" path="res://pause_menu.gdshader" id="2_jh6sb"]
 [ext_resource type="Texture2D" uid="uid://ccmojd1cjlncb" path="res://Assets/Gatos&GlocksSprites/Vida.png" id="3_d1dwg"]
 [ext_resource type="Texture2D" uid="uid://bmwujttbnivs" path="res://Assets/Gatos&GlocksSprites/Balet¦o.png" id="4_ir56d"]
-[ext_resource type="Texture2D" uid="uid://7r26uw0er75u" path="res://Assets/Gatos&GlocksSprites/XP.png" id="5_txn7w"]
+[ext_resource type="Texture2D" uid="uid://7r26uw0er75u" path="res://Assets/Gatos&GlocksSprites/xp.png" id="5_txn7w"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_7bifv"]
 shader = ExtResource("2_jh6sb")

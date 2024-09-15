@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://g6m26d5y47y"]
+[gd_scene load_steps=13 format=3 uid="uid://g6m26d5y47y"]
 
 [ext_resource type="Script" path="res://main_menu.gd" id="1_udncy"]
 [ext_resource type="FontFile" uid="uid://bc8adarl5qcvx" path="res://calli-cat.regular.ttf" id="2_lxgtw"]
@@ -12,6 +12,10 @@ corner_radius_top_left = 16
 corner_radius_top_right = 16
 corner_radius_bottom_right = 16
 corner_radius_bottom_left = 16
+expand_margin_left = 10.0
+expand_margin_top = 5.0
+expand_margin_right = 10.0
+expand_margin_bottom = 5.0
 shadow_color = Color(0, 0, 0, 0.854902)
 shadow_size = 5
 shadow_offset = Vector2(0, 4)
@@ -30,32 +34,16 @@ corner_radius_top_right = 16
 corner_radius_bottom_right = 16
 corner_radius_bottom_left = 16
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fkcyh"]
-bg_color = Color(0.882353, 0.737255, 0.219608, 1)
-corner_radius_top_left = 16
-corner_radius_top_right = 16
-corner_radius_bottom_right = 16
-corner_radius_bottom_left = 16
-shadow_color = Color(0, 0, 0, 0.854902)
-shadow_size = 5
-shadow_offset = Vector2(0, 4)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gt8gq"]
-bg_color = Color(1, 1, 1, 1)
-corner_radius_top_left = 16
-corner_radius_top_right = 16
-corner_radius_bottom_right = 16
-corner_radius_bottom_left = 16
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dyu52"]
-bg_color = Color(0, 0, 0, 1)
-
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ixt5t"]
 bg_color = Color(0.882353, 0.737255, 0.219608, 1)
 corner_radius_top_left = 16
 corner_radius_top_right = 16
 corner_radius_bottom_right = 16
 corner_radius_bottom_left = 16
+expand_margin_left = 10.0
+expand_margin_top = 5.0
+expand_margin_right = 10.0
+expand_margin_bottom = 5.0
 shadow_color = Color(0, 0, 0, 0.854902)
 shadow_size = 5
 shadow_offset = Vector2(0, 4)
@@ -76,6 +64,10 @@ corner_radius_top_left = 16
 corner_radius_top_right = 16
 corner_radius_bottom_right = 16
 corner_radius_bottom_left = 16
+expand_margin_left = 10.0
+expand_margin_top = 5.0
+expand_margin_right = 10.0
+expand_margin_bottom = 5.0
 shadow_color = Color(0, 0, 0, 0.854902)
 shadow_size = 5
 shadow_offset = Vector2(0, 4)
@@ -153,27 +145,17 @@ theme_override_constants/separation = 25
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_lxgtw")
-theme_override_font_sizes/font_size = 60
+theme_override_font_sizes/font_size = 80
 theme_override_styles/normal = SubResource("StyleBoxFlat_g2of6")
 theme_override_styles/hover = SubResource("StyleBoxFlat_k42du")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_6whis")
 text = "Start"
 
-[node name="Options" type="Button" parent="Panel/MarginContainer/VBoxContainer/CenterContainer/VBoxContainer"]
-layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("2_lxgtw")
-theme_override_font_sizes/font_size = 60
-theme_override_styles/normal = SubResource("StyleBoxFlat_fkcyh")
-theme_override_styles/hover = SubResource("StyleBoxFlat_gt8gq")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_dyu52")
-text = "      Options      "
-
 [node name="Controle" type="Button" parent="Panel/MarginContainer/VBoxContainer/CenterContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_lxgtw")
-theme_override_font_sizes/font_size = 60
+theme_override_font_sizes/font_size = 80
 theme_override_styles/normal = SubResource("StyleBoxFlat_ixt5t")
 theme_override_styles/hover = SubResource("StyleBoxFlat_xbpk6")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_3518d")
@@ -183,13 +165,12 @@ text = "Controle"
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_lxgtw")
-theme_override_font_sizes/font_size = 60
+theme_override_font_sizes/font_size = 80
 theme_override_styles/normal = SubResource("StyleBoxFlat_awet6")
 theme_override_styles/hover = SubResource("StyleBoxFlat_p4dgd")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_w3khg")
 text = "Quit"
 
 [connection signal="pressed" from="Panel/MarginContainer/VBoxContainer/CenterContainer/VBoxContainer/Start" to="." method="_on_start_pressed"]
-[connection signal="pressed" from="Panel/MarginContainer/VBoxContainer/CenterContainer/VBoxContainer/Options" to="." method="_on_options_pressed"]
 [connection signal="pressed" from="Panel/MarginContainer/VBoxContainer/CenterContainer/VBoxContainer/Controle" to="." method="_on_controle_pressed"]
 [connection signal="pressed" from="Panel/MarginContainer/VBoxContainer/CenterContainer/VBoxContainer/Quit" to="." method="_on_quit_pressed"]

@@ -1,5 +1,4 @@
 res://survivors_game.tscn
-res://survivors_game.gd
 res://pause_menu.gdshader
 res://lvl_up_menu.tscn
 res://gun.tscn
@@ -17,4 +16,3 @@ res://musgas.tscn
 res://controles.tscn
 res://mob2.tscn
 res://omago.tscn
-res://Labels.gd

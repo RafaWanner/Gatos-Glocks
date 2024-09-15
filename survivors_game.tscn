@@ -8,7 +8,7 @@
 [ext_resource type="Script" path="res://Labels.gd" id="7_wfnwv"]
 [ext_resource type="PackedScene" uid="uid://cn65umf10v4gx" path="res://heart_bar.tscn" id="8_a1kei"]
 [ext_resource type="PackedScene" uid="uid://cok1mjsou31pv" path="res://musgas.tscn" id="8_lvlih"]
-[ext_resource type="AudioStream" uid="uid://dyr6mvbvqtbiv" path="res://Assets/Audios/exlopsion.wav" id="9_k5n8b"]
+[ext_resource type="AudioStream" uid="uid://dyr6mvbvqtbiv" path="res://Assets/audios/exlopsion.wav" id="9_k5n8b"]
 [ext_resource type="Texture2D" uid="uid://cvsxhb4vcsw76" path="res://Assets/Gatos&GlocksSprites/merdadofundo.png" id="10_3tmyt"]
 
 [sub_resource type="Curve2D" id="Curve2D_qrd0f"]
@@ -211,10 +211,10 @@ offset_bottom = 3272.0
 texture = ExtResource("10_3tmyt")
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
-[connection signal="timeout" from="Timer2" to="." method="_on_timer_timeout"]
 [connection signal="timeout" from="Timer2" to="." method="_on_timer_2_timeout"]
-[connection signal="timeout" from="Timer2Timer" to="." method="_on_timer_timeout"]
-[connection signal="timeout" from="Timer2Timer" to="." method="_on_timer_2_timeout"]
+[connection signal="timeout" from="Timer2" to="." method="_on_timer_timeout"]
 [connection signal="timeout" from="Timer2Timer" to="." method="_on_timer_2_timer_timeout"]
+[connection signal="timeout" from="Timer2Timer" to="." method="_on_timer_2_timeout"]
+[connection signal="timeout" from="Timer2Timer" to="." method="_on_timer_timeout"]
 [connection signal="timeout" from="Timer3Timer" to="." method="_on_timer_3_timer_timeout"]
 [connection signal="timeout" from="Timer3" to="." method="_on_timer_3_timeout"]
